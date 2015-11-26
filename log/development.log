@@ -1422,3 +1422,85 @@ Processing by StudentsController#index as HTML
   Rendered layouts/_navigation.html.haml (1.3ms)
   Rendered layouts/_messages.html.haml (0.1ms)
 Completed 200 OK in 127ms (Views: 125.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-26 14:06:05 +0100
+Processing by VisitorsController#index as HTML
+  Rendered visitors/index.html.haml within layouts/application (0.1ms)
+  Rendered layouts/_navigation.html.haml (1.7ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 353ms (Views: 349.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-26 14:06:10 +0100
+Processing by StudentsController#index as HTML
+  [1m[36mStudent Load (0.9ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered collection (0.0ms)
+  Rendered students/index.html.haml within layouts/application (13.2ms)
+  Rendered layouts/_navigation.html.haml (1.3ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 187ms (Views: 182.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-26 14:06:12 +0100
+Processing by StudentsController#index as HTML
+  [1m[35mStudent Load (0.4ms)[0m  SELECT "students".* FROM "students"
+  Rendered collection (0.0ms)
+  Rendered students/index.html.haml within layouts/application (2.7ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 178ms (Views: 176.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-11-26 14:06:15 +0100
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.8ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  Rendered collection (0.0ms)
+  Rendered teachers/index.html.haml within layouts/application (8.8ms)
+  Rendered layouts/_navigation.html.haml (1.3ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 182ms (Views: 178.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/report/subjects" for 127.0.0.1 at 2015-11-26 14:06:17 +0100
+Processing by ReportsController#subjects as HTML
+  [1m[35mSubjectItem Load (1.2ms)[0m  SELECT "subject_items".* FROM "subject_items"
+  Rendered reports/subjects.html.haml within layouts/application (10.2ms)
+  Rendered layouts/_navigation.html.haml (1.4ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 148ms (Views: 143.9ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-26 14:06:18 +0100
+Processing by VisitorsController#index as HTML
+  Rendered visitors/index.html.haml within layouts/application (0.2ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 183ms (Views: 181.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-11-26 14:06:19 +0100
+Processing by TeachersController#index as HTML
+  [1m[36mTeacher Load (0.7ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  Rendered collection (0.0ms)
+  Rendered teachers/index.html.haml within layouts/application (5.4ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 160ms (Views: 158.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-26 14:06:21 +0100
+Processing by VisitorsController#index as HTML
+  Rendered visitors/index.html.haml within layouts/application (0.2ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 143ms (Views: 142.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/report/subjects" for 127.0.0.1 at 2015-11-26 14:06:24 +0100
+Processing by ReportsController#subjects as HTML
+  [1m[35mSubjectItem Load (0.6ms)[0m  SELECT "subject_items".* FROM "subject_items"
+  Rendered reports/subjects.html.haml within layouts/application (1.6ms)
+  Rendered layouts/_navigation.html.haml (1.3ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 149ms (Views: 147.2ms | ActiveRecord: 0.6ms)
