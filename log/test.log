@@ -319,3 +319,444 @@ FOREIGN KEY ("teacher_id")
   [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
   [1m[35m (0.1ms)[0m  BEGIN
   [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (221.3ms)[0m  [1mDROP DATABASE IF EXISTS "workshops_test"[0m
+  [1m[35m (700.0ms)[0m  CREATE DATABASE "workshops_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (54.0ms)[0m  CREATE TABLE "participations" ("id" serial primary key, "student_id" integer, "subject_item_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (60.8ms)[0m  [1mCREATE  INDEX  "index_participations_on_student_id" ON "participations" USING btree ("student_id")[0m
+  [1m[35m (50.5ms)[0m  CREATE  INDEX  "index_participations_on_subject_item_id" ON "participations" USING btree ("subject_item_id")
+  [1m[36m (88.2ms)[0m  [1mCREATE TABLE "students" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (74.7ms)[0m  CREATE TABLE "subject_item_notes" ("id" serial primary key, "value" integer, "student_id" integer, "subject_item_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (50.0ms)[0m  [1mCREATE  INDEX  "index_subject_item_notes_on_student_id" ON "subject_item_notes" USING btree ("student_id")[0m
+  [1m[35m (51.0ms)[0m  CREATE  INDEX  "index_subject_item_notes_on_subject_item_id" ON "subject_item_notes" USING btree ("subject_item_id")
+  [1m[36m (86.1ms)[0m  [1mCREATE TABLE "subject_items" ("id" serial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "teacher_id" integer) [0m
+  [1m[35m (38.7ms)[0m  CREATE  INDEX  "index_subject_items_on_teacher_id" ON "subject_items" USING btree ("teacher_id")
+  [1m[36m (97.0ms)[0m  [1mCREATE TABLE "teachers" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "academic_title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (100.7ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (50.1ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (52.1ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (10.5ms)[0m  [1mALTER TABLE "participations" ADD CONSTRAINT "fk_rails_185ff5bee8"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (10.2ms)[0m  ALTER TABLE "participations" ADD CONSTRAINT "fk_rails_76267974c1"
+FOREIGN KEY ("subject_item_id")
+  REFERENCES "subject_items" ("id")
+
+  [1m[36m (10.4ms)[0m  [1mALTER TABLE "subject_item_notes" ADD CONSTRAINT "fk_rails_e00788d7e2"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (10.4ms)[0m  ALTER TABLE "subject_item_notes" ADD CONSTRAINT "fk_rails_058a0d7ccf"
+FOREIGN KEY ("subject_item_id")
+  REFERENCES "subject_items" ("id")
+
+  [1m[36m (10.3ms)[0m  [1mALTER TABLE "subject_items" ADD CONSTRAINT "fk_rails_f14980cba6"
+FOREIGN KEY ("teacher_id")
+  REFERENCES "teachers" ("id")
+[0m
+  [1m[35m (55.0ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (51.6ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (1.4ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (8.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150719115626')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (17.6ms)[0m  [1mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.7ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (3.0ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'workshops_test'[0m
+  [1m[35m (641.0ms)[0m  TRUNCATE TABLE "public"."users", "public"."students", "public"."teachers", "public"."subject_items", "public"."participations", "public"."subject_item_notes" RESTART IDENTITY CASCADE;
+  [1m[36m (15.3ms)[0m  [1mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mParticipation Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" IS NULL AND "participations"."subject_item_id" IS NULL) LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mParticipation Exists (0.7ms)[0m  SELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" IS NULL AND "participations"."subject_item_id" IS NULL) LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Roberta"], ["last_name", "Volkman"], ["created_at", "2015-11-26 10:51:13.260320"], ["updated_at", "2015-11-26 10:51:13.260320"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Lead Directives Technician"], ["created_at", "2015-11-26 10:51:13.269341"], ["updated_at", "2015-11-26 10:51:13.269341"]]
+  [1m[35m (0.9ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mParticipation Exists (0.6ms)[0m  SELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 1 AND "participations"."subject_item_id" = 1) LIMIT 1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "participations" ("student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-26 10:51:13.278638"], ["updated_at", "2015-11-26 10:51:13.278638"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mStudent Load (0.7ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubjectItem Load (0.7ms)[0m  SELECT  "subject_items".* FROM "subject_items" WHERE "subject_items"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mParticipation Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 1 AND "participations"."subject_item_id" = 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (636.9ms)[0m  [1mDROP DATABASE IF EXISTS "workshops_test"[0m
+  [1m[35m (966.2ms)[0m  CREATE DATABASE "workshops_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (75.2ms)[0m  CREATE TABLE "participations" ("id" serial primary key, "student_id" integer, "subject_item_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (49.3ms)[0m  [1mCREATE  INDEX  "index_participations_on_student_id" ON "participations" USING btree ("student_id")[0m
+  [1m[35m (50.4ms)[0m  CREATE  INDEX  "index_participations_on_subject_item_id" ON "participations" USING btree ("subject_item_id")
+  [1m[36m (86.8ms)[0m  [1mCREATE TABLE "students" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (52.7ms)[0m  CREATE TABLE "subject_item_notes" ("id" serial primary key, "value" integer, "student_id" integer, "subject_item_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (50.7ms)[0m  [1mCREATE  INDEX  "index_subject_item_notes_on_student_id" ON "subject_item_notes" USING btree ("student_id")[0m
+  [1m[35m (51.1ms)[0m  CREATE  INDEX  "index_subject_item_notes_on_subject_item_id" ON "subject_item_notes" USING btree ("subject_item_id")
+  [1m[36m (108.7ms)[0m  [1mCREATE TABLE "subject_items" ("id" serial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "teacher_id" integer) [0m
+  [1m[35m (50.2ms)[0m  CREATE  INDEX  "index_subject_items_on_teacher_id" ON "subject_items" USING btree ("teacher_id")
+  [1m[36m (86.1ms)[0m  [1mCREATE TABLE "teachers" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "academic_title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (89.7ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (49.9ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (62.0ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (10.0ms)[0m  [1mALTER TABLE "participations" ADD CONSTRAINT "fk_rails_185ff5bee8"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (10.0ms)[0m  ALTER TABLE "participations" ADD CONSTRAINT "fk_rails_76267974c1"
+FOREIGN KEY ("subject_item_id")
+  REFERENCES "subject_items" ("id")
+
+  [1m[36m (10.1ms)[0m  [1mALTER TABLE "subject_item_notes" ADD CONSTRAINT "fk_rails_e00788d7e2"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (10.2ms)[0m  ALTER TABLE "subject_item_notes" ADD CONSTRAINT "fk_rails_058a0d7ccf"
+FOREIGN KEY ("subject_item_id")
+  REFERENCES "subject_items" ("id")
+
+  [1m[36m (10.0ms)[0m  [1mALTER TABLE "subject_items" ADD CONSTRAINT "fk_rails_f14980cba6"
+FOREIGN KEY ("teacher_id")
+  REFERENCES "teachers" ("id")
+[0m
+  [1m[35m (45.5ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (50.3ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (1.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150719115626')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (11.7ms)[0m  [1mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.8ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (4.1ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'workshops_test'[0m
+  [1m[35m (631.0ms)[0m  TRUNCATE TABLE "public"."users", "public"."students", "public"."teachers", "public"."subject_items", "public"."participations", "public"."subject_item_notes" RESTART IDENTITY CASCADE;
+  [1m[36m (15.8ms)[0m  [1mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (335.5ms)[0m  [1mDROP DATABASE IF EXISTS "workshops_test"[0m
+  [1m[35m (754.9ms)[0m  CREATE DATABASE "workshops_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (63.6ms)[0m  CREATE TABLE "participations" ("id" serial primary key, "student_id" integer, "subject_item_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (50.1ms)[0m  [1mCREATE  INDEX  "index_participations_on_student_id" ON "participations" USING btree ("student_id")[0m
+  [1m[35m (50.5ms)[0m  CREATE  INDEX  "index_participations_on_subject_item_id" ON "participations" USING btree ("subject_item_id")
+  [1m[36m (97.9ms)[0m  [1mCREATE TABLE "students" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (63.4ms)[0m  CREATE TABLE "subject_item_notes" ("id" serial primary key, "value" integer, "student_id" integer, "subject_item_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (61.2ms)[0m  [1mCREATE  INDEX  "index_subject_item_notes_on_student_id" ON "subject_item_notes" USING btree ("student_id")[0m
+  [1m[35m (61.5ms)[0m  CREATE  INDEX  "index_subject_item_notes_on_subject_item_id" ON "subject_item_notes" USING btree ("subject_item_id")
+  [1m[36m (98.7ms)[0m  [1mCREATE TABLE "subject_items" ("id" serial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "teacher_id" integer) [0m
+  [1m[35m (60.8ms)[0m  CREATE  INDEX  "index_subject_items_on_teacher_id" ON "subject_items" USING btree ("teacher_id")
+  [1m[36m (97.1ms)[0m  [1mCREATE TABLE "teachers" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "academic_title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (89.0ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (50.3ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (51.6ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (9.8ms)[0m  [1mALTER TABLE "participations" ADD CONSTRAINT "fk_rails_185ff5bee8"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (10.4ms)[0m  ALTER TABLE "participations" ADD CONSTRAINT "fk_rails_76267974c1"
+FOREIGN KEY ("subject_item_id")
+  REFERENCES "subject_items" ("id")
+
+  [1m[36m (10.8ms)[0m  [1mALTER TABLE "subject_item_notes" ADD CONSTRAINT "fk_rails_e00788d7e2"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (10.4ms)[0m  ALTER TABLE "subject_item_notes" ADD CONSTRAINT "fk_rails_058a0d7ccf"
+FOREIGN KEY ("subject_item_id")
+  REFERENCES "subject_items" ("id")
+
+  [1m[36m (10.2ms)[0m  [1mALTER TABLE "subject_items" ADD CONSTRAINT "fk_rails_f14980cba6"
+FOREIGN KEY ("teacher_id")
+  REFERENCES "teachers" ("id")
+[0m
+  [1m[35m (53.7ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (50.9ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (1.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150719115626')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.6ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (20.3ms)[0m  [1mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.6ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (4.1ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'workshops_test'[0m
+  [1m[35m (618.8ms)[0m  TRUNCATE TABLE "public"."users", "public"."students", "public"."teachers", "public"."subject_items", "public"."participations", "public"."subject_item_notes" RESTART IDENTITY CASCADE;
+  [1m[36m (15.5ms)[0m  [1mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (229.9ms)[0m  [1mDROP DATABASE IF EXISTS "workshops_test"[0m
+  [1m[35m (699.5ms)[0m  CREATE DATABASE "workshops_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (66.4ms)[0m  CREATE TABLE "participations" ("id" serial primary key, "student_id" integer, "subject_item_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (49.2ms)[0m  [1mCREATE  INDEX  "index_participations_on_student_id" ON "participations" USING btree ("student_id")[0m
+  [1m[35m (50.6ms)[0m  CREATE  INDEX  "index_participations_on_subject_item_id" ON "participations" USING btree ("subject_item_id")
+  [1m[36m (97.7ms)[0m  [1mCREATE TABLE "students" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (63.7ms)[0m  CREATE TABLE "subject_item_notes" ("id" serial primary key, "value" integer, "student_id" integer, "subject_item_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (50.0ms)[0m  [1mCREATE  INDEX  "index_subject_item_notes_on_student_id" ON "subject_item_notes" USING btree ("student_id")[0m
+  [1m[35m (50.3ms)[0m  CREATE  INDEX  "index_subject_item_notes_on_subject_item_id" ON "subject_item_notes" USING btree ("subject_item_id")
+  [1m[36m (86.5ms)[0m  [1mCREATE TABLE "subject_items" ("id" serial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "teacher_id" integer) [0m
+  [1m[35m (50.2ms)[0m  CREATE  INDEX  "index_subject_items_on_teacher_id" ON "subject_items" USING btree ("teacher_id")
+  [1m[36m (86.0ms)[0m  [1mCREATE TABLE "teachers" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "academic_title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (101.3ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (60.9ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (50.3ms)[0m  CREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")
+  [1m[36m (9.9ms)[0m  [1mALTER TABLE "participations" ADD CONSTRAINT "fk_rails_185ff5bee8"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (9.6ms)[0m  ALTER TABLE "participations" ADD CONSTRAINT "fk_rails_76267974c1"
+FOREIGN KEY ("subject_item_id")
+  REFERENCES "subject_items" ("id")
+
+  [1m[36m (10.2ms)[0m  [1mALTER TABLE "subject_item_notes" ADD CONSTRAINT "fk_rails_e00788d7e2"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+[0m
+  [1m[35m (10.0ms)[0m  ALTER TABLE "subject_item_notes" ADD CONSTRAINT "fk_rails_058a0d7ccf"
+FOREIGN KEY ("subject_item_id")
+  REFERENCES "subject_items" ("id")
+
+  [1m[36m (9.9ms)[0m  [1mALTER TABLE "subject_items" ADD CONSTRAINT "fk_rails_f14980cba6"
+FOREIGN KEY ("teacher_id")
+  REFERENCES "teachers" ("id")
+[0m
+  [1m[35m (50.4ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (50.7ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (1.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150719115626')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.8ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (34.0ms)[0m  [1mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.2ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (3.1ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'workshops_test'[0m
+  [1m[35m (710.6ms)[0m  TRUNCATE TABLE "public"."users", "public"."students", "public"."teachers", "public"."subject_items", "public"."participations", "public"."subject_item_notes" RESTART IDENTITY CASCADE;
+  [1m[36m (15.3ms)[0m  [1mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (525.5ms)[0m  [1mDROP DATABASE IF EXISTS "workshops_test"[0m
+  [1m[35m (711.0ms)[0m  CREATE DATABASE "workshops_test" ENCODING = 'unicode'
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (55.1ms)[0m  CREATE TABLE "participations" ("id" serial primary key, "student_id" integer, "subject_item_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (72.4ms)[0m  [1mCREATE  INDEX  "index_participations_on_student_id" ON "participations" USING btree ("student_id")[0m
+  [1m[35m (60.8ms)[0m  CREATE  INDEX  "index_participations_on_subject_item_id" ON "participations" USING btree ("subject_item_id")
+  [1m[36m (87.5ms)[0m  [1mCREATE TABLE "students" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (54.0ms)[0m  CREATE TABLE "subject_item_notes" ("id" serial primary key, "value" integer, "student_id" integer, "subject_item_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (63.8ms)[0m  [1mCREATE  INDEX  "index_subject_item_notes_on_student_id" ON "subject_item_notes" USING btree ("student_id")[0m
+  [1m[35m (60.7ms)[0m  CREATE  INDEX  "index_subject_item_notes_on_subject_item_id" ON "subject_item_notes" USING btree ("subject_item_id")
+  [1m[36m (87.5ms)[0m  [1mCREATE TABLE "subject_items" ("id" serial primary key, "title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "teacher_id" integer, "student_id" integer) [0m
+  [1m[35m (52.5ms)[0m  CREATE  INDEX  "index_subject_items_on_student_id" ON "subject_items" USING btree ("student_id")
+  [1m[36m (50.9ms)[0m  [1mCREATE  INDEX  "index_subject_items_on_teacher_id" ON "subject_items" USING btree ("teacher_id")[0m
+  [1m[35m (97.7ms)[0m  CREATE TABLE "teachers" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "academic_title" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (110.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (62.7ms)[0m  CREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")
+  [1m[36m (51.8ms)[0m  [1mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users" USING btree ("reset_password_token")[0m
+  [1m[35m (10.5ms)[0m  ALTER TABLE "participations" ADD CONSTRAINT "fk_rails_185ff5bee8"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+
+  [1m[36m (10.6ms)[0m  [1mALTER TABLE "participations" ADD CONSTRAINT "fk_rails_76267974c1"
+FOREIGN KEY ("subject_item_id")
+  REFERENCES "subject_items" ("id")
+[0m
+  [1m[35m (10.5ms)[0m  ALTER TABLE "subject_item_notes" ADD CONSTRAINT "fk_rails_e00788d7e2"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+
+  [1m[36m (10.5ms)[0m  [1mALTER TABLE "subject_item_notes" ADD CONSTRAINT "fk_rails_058a0d7ccf"
+FOREIGN KEY ("subject_item_id")
+  REFERENCES "subject_items" ("id")
+[0m
+  [1m[35m (10.4ms)[0m  ALTER TABLE "subject_items" ADD CONSTRAINT "fk_rails_c0133ef62c"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+
+  [1m[36m (10.6ms)[0m  [1mALTER TABLE "subject_items" ADD CONSTRAINT "fk_rails_f14980cba6"
+FOREIGN KEY ("teacher_id")
+  REFERENCES "teachers" ("id")
+[0m
+  [1m[35m (58.7ms)[0m  CREATE TABLE "schema_migrations" ("version" character varying NOT NULL) 
+  [1m[36m (97.1ms)[0m  [1mCREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")[0m
+  [1m[35m (0.7ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (8.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151126110120')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (6.2ms)[0m  [1mALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL[0m
+  [1m[35m (3.9ms)[0m            SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+
+  [1m[36m (3.0ms)[0m  [1mselect table_name from information_schema.views where table_schema = 'workshops_test'[0m
+  [1m[35m (793.9ms)[0m  TRUNCATE TABLE "public"."users", "public"."teachers", "public"."students", "public"."participations", "public"."subject_item_notes", "public"."subject_items" RESTART IDENTITY CASCADE;
+  [1m[36m (8.0ms)[0m  [1mALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
