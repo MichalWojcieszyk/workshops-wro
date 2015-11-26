@@ -884,3 +884,485 @@ FOREIGN KEY ("teacher_id")
   [1m[35m (0.3ms)[0m  COMMIT
   [1m[36m (0.3ms)[0m  [1mBEGIN[0m
   [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (7.7ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL
+  [1m[36m (3.5ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.6ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (738.8ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."participations", "public"."teachers", "public"."subject_item_notes", "public"."subject_items", "public"."students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (4.9ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (16.9ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL
+  [1m[36m (3.7ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.6ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (796.9ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."teachers", "public"."participations", "public"."subject_item_notes", "public"."subject_items", "public"."students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (15.5ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (15.6ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (729.4ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."participations", "public"."subject_item_notes", "public"."subject_items", "public"."students", "public"."teachers" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (8.6ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (4.0ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL
+  [1m[36m (2.1ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (757.1ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."subject_item_notes", "public"."subject_items", "public"."students", "public"."teachers", "public"."participations" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (15.2ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (40.3ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL
+  [1m[36m (30.5ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (28.9ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (787.9ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."subject_items", "public"."students", "public"."teachers", "public"."participations", "public"."subject_item_notes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (14.1ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (7.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (106.6ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL
+  [1m[36m (83.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (122.7ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (1240.2ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."students", "public"."teachers", "public"."participations", "public"."subject_item_notes", "public"."subject_items" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (27.2ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (21.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mireya.kuhic@example.com' LIMIT 1[0m
+  [1m[35mSQL (16.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "mireya.kuhic@example.com"], ["encrypted_password", "$2a$04$4zBju9B3NsPvrzFPc17Rquy3pvi3iTWqTHcigRZqsbb.dprqGls8u"], ["created_at", "2015-11-26 12:20:45.309178"], ["updated_at", "2015-11-26 12:20:45.309178"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Arturo"], ["last_name", "Stanton"], ["created_at", "2015-11-26 12:20:45.383068"], ["updated_at", "2015-11-26 12:20:45.383068"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered students/show.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 142ms (Views: 107.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'benny@example.org' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "benny@example.org"], ["encrypted_password", "$2a$04$erAy4Bu6tlBE/EqkaxcIFOi26xKECq4eVdRGSC.Utnkk.2fPgpgfK"], ["created_at", "2015-11-26 12:20:45.618990"], ["updated_at", "2015-11-26 12:20:45.618990"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.7ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'kristin_kris@example.net' LIMIT 1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "kristin_kris@example.net"], ["encrypted_password", "$2a$04$Qot7.OfgS9btHRXjIChHe.eKWn1kufA4isN5DFAExh8YoHsYHhDk6"], ["created_at", "2015-11-26 12:20:45.650420"], ["updated_at", "2015-11-26 12:20:45.650420"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Delilah"], ["last_name", "Volkman"], ["created_at", "2015-11-26 12:20:45.657407"], ["updated_at", "2015-11-26 12:20:45.657407"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  Rendered students/edit.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'keagan@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "keagan@example.org"], ["encrypted_password", "$2a$04$Xn72nPvBkUTtEG.meWJbSeDlP9dlNlFfSp46WTn3xIR3ysOIX1u0e"], ["created_at", "2015-11-26 12:20:45.679526"], ["updated_at", "2015-11-26 12:20:45.679526"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.haml within layouts/application (0.3ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'ashtyn@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "ashtyn@example.org"], ["encrypted_password", "$2a$04$0RaIVM4yxXjGjmf9Jq1TeOTNO8kVq2gjPWxobGYU1gZ40lDSj59BS"], ["created_at", "2015-11-26 12:20:45.702423"], ["updated_at", "2015-11-26 12:20:45.702423"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by StudentsController#create as HTML
+  Parameters: {"student"=>{"id"=>nil, "first_name"=>"Reina", "last_name"=>"Auer", "created_at"=>nil, "updated_at"=>nil}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'lucinda.carter@example.net' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "lucinda.carter@example.net"], ["encrypted_password", "$2a$04$cr9S9Z8HGXs6mv.MxQTguernyxtf8QENoFl2qfFw.4FBSWROGnTmK"], ["created_at", "2015-11-26 12:20:45.725086"], ["updated_at", "2015-11-26 12:20:45.725086"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by StudentsController#create as HTML
+  Parameters: {"student"=>{"id"=>nil, "first_name"=>"Christiana", "last_name"=>"Mante", "created_at"=>nil, "updated_at"=>nil}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'dahlia@example.org' LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "dahlia@example.org"], ["encrypted_password", "$2a$04$.tyo0Dl1c5EQ0FGj9RfpgO/t63UnPuGNZd0HH941egM17a8u.3WES"], ["created_at", "2015-11-26 12:20:45.744255"], ["updated_at", "2015-11-26 12:20:45.744255"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "students"
+Processing by StudentsController#create as HTML
+  Parameters: {"student"=>{"id"=>nil, "first_name"=>"Charlie", "last_name"=>"Lakin", "created_at"=>nil, "updated_at"=>nil}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mertie@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "mertie@example.com"], ["encrypted_password", "$2a$04$9TUfpms4tfpLbvGMKfF74upDmUp6kGlZkmsJu48uODtsTxW19M/2i"], ["created_at", "2015-11-26 12:20:45.803971"], ["updated_at", "2015-11-26 12:20:45.803971"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by StudentsController#create as HTML
+  Parameters: {"student"=>{"id"=>nil, "first_name"=>"Enola", "last_name"=>"Murray", "created_at"=>nil, "updated_at"=>nil}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'annalise@example.org' LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "annalise@example.org"], ["encrypted_password", "$2a$04$9f4Hc2/DkeEFlkW/p1Ml9.MciFg9fEhcxJKaHlc4sWHehrFb7ZCKC"], ["created_at", "2015-11-26 12:20:45.859676"], ["updated_at", "2015-11-26 12:20:45.859676"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-26 12:20:45.864762"], ["updated_at", "2015-11-26 12:20:45.864762"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by StudentsController#update as HTML
+  Parameters: {"student"=>{"first_name"=>"Walter"}, "id"=>"3"}
+  [1m[35mStudent Load (0.7ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 3]]
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.7ms)
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.8ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'pasquale.zemlak@example.net' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "pasquale.zemlak@example.net"], ["encrypted_password", "$2a$04$YKzVOA3c53mwh9MPyy24NO37B8sk.LjghL.Lo.nlZWaTXbSRDk6.."], ["created_at", "2015-11-26 12:20:45.919656"], ["updated_at", "2015-11-26 12:20:45.919656"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-26 12:20:45.923945"], ["updated_at", "2015-11-26 12:20:45.923945"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Processing by StudentsController#update as HTML
+  Parameters: {"student"=>{"first_name"=>"Walter"}, "id"=>"4"}
+  [1m[35mStudent Load (0.5ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 4]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'milford@example.net' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "milford@example.net"], ["encrypted_password", "$2a$04$KdeMqW6Bq8WoUT4c/tFUEuZc.a4kwaHUJTcfKKwTgOcr0N46v5E/2"], ["created_at", "2015-11-26 12:20:45.945086"], ["updated_at", "2015-11-26 12:20:45.945086"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-26 12:20:45.948853"], ["updated_at", "2015-11-26 12:20:45.948853"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mStudent Load (0.4ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 5]]
+Processing by StudentsController#update as HTML
+  Parameters: {"student"=>{"first_name"=>"Walter"}, "id"=>"5"}
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 5]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'esther@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "esther@example.com"], ["encrypted_password", "$2a$04$gVfTsXY1RkhBrggys86eZeKfsYZyfoQQEpF//xaKhvvAkYMxVSZWi"], ["created_at", "2015-11-26 12:20:45.969674"], ["updated_at", "2015-11-26 12:20:45.969674"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-26 12:20:45.976236"], ["updated_at", "2015-11-26 12:20:45.976236"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by StudentsController#update as HTML
+  Parameters: {"student"=>{"first_name"=>"Walter"}, "id"=>"6"}
+  [1m[36mStudent Load (0.8ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 6]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'sherman@example.net' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "sherman@example.net"], ["encrypted_password", "$2a$04$tAxhZidW6OCltf.ednsQ9ekB5ic3CbfO1m4ZloR2v7k1apEV54XsC"], ["created_at", "2015-11-26 12:20:45.995886"], ["updated_at", "2015-11-26 12:20:45.995886"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Gaetano"], ["last_name", "Ferry"], ["created_at", "2015-11-26 12:20:45.999820"], ["updated_at", "2015-11-26 12:20:45.999820"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by StudentsController#destroy as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mStudent Load (0.7ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 7]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mParticipation Load (1.2ms)[0m  [1mSELECT "participations".* FROM "participations" WHERE "participations"."student_id" = $1[0m  [["student_id", 7]]
+  [1m[35mSubjectItemNote Load (1.2ms)[0m  SELECT "subject_item_notes".* FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1  [["student_id", 7]]
+  [1m[36mSubjectItem Load (12.9ms)[0m  [1mSELECT "subject_items".* FROM "subject_items" WHERE "subject_items"."student_id" = $1[0m  [["student_id", 7]]
+  [1m[35mSQL (1.8ms)[0m  DELETE FROM "students" WHERE "students"."id" = $1  [["id", 7]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/students
+Completed 302 Found in 144ms (ActiveRecord: 25.2ms)
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'esther@example.org' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "esther@example.org"], ["encrypted_password", "$2a$04$40sz5AX5K2Xj5OoH43UePuj.dHnImJrda9dILqXaM4OeQyElz9X1O"], ["created_at", "2015-11-26 12:20:46.168987"], ["updated_at", "2015-11-26 12:20:46.168987"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Faustino"], ["last_name", "Bechtelar"], ["created_at", "2015-11-26 12:20:46.176077"], ["updated_at", "2015-11-26 12:20:46.176077"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+Processing by StudentsController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mStudent Load (1.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mParticipation Load (0.6ms)[0m  [1mSELECT "participations".* FROM "participations" WHERE "participations"."student_id" = $1[0m  [["student_id", 8]]
+  [1m[35mSubjectItemNote Load (0.4ms)[0m  SELECT "subject_item_notes".* FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1  [["student_id", 8]]
+  [1m[36mSubjectItem Load (0.4ms)[0m  [1mSELECT "subject_items".* FROM "subject_items" WHERE "subject_items"."student_id" = $1[0m  [["student_id", 8]]
+  [1m[35mSQL (1.2ms)[0m  DELETE FROM "students" WHERE "students"."id" = $1  [["id", 8]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/students
+Completed 302 Found in 15ms (ActiveRecord: 4.9ms)
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'karina_lehner@example.net' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "karina_lehner@example.net"], ["encrypted_password", "$2a$04$bwnc/KFNBBrKTZDF9.KbkOP9W8cyT72XdPCswI8hwFy51HQGNNGCy"], ["created_at", "2015-11-26 12:20:46.236032"], ["updated_at", "2015-11-26 12:20:46.236032"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Mohammed"], ["last_name", "Toy"], ["created_at", "2015-11-26 12:20:46.242864"], ["updated_at", "2015-11-26 12:20:46.242864"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "students"[0m
+Processing by StudentsController#destroy as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mStudent Load (0.5ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mParticipation Load (0.9ms)[0m  SELECT "participations".* FROM "participations" WHERE "participations"."student_id" = $1  [["student_id", 9]]
+  [1m[36mSubjectItemNote Load (0.6ms)[0m  [1mSELECT "subject_item_notes".* FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1[0m  [["student_id", 9]]
+  [1m[35mSubjectItem Load (0.5ms)[0m  SELECT "subject_items".* FROM "subject_items" WHERE "subject_items"."student_id" = $1  [["student_id", 9]]
+  [1m[36mSQL (1.2ms)[0m  [1mDELETE FROM "students" WHERE "students"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://test.host/students
+Completed 302 Found in 12ms (ActiveRecord: 4.4ms)
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "students"[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
