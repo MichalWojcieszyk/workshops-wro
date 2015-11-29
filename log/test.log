@@ -2634,3 +2634,1333 @@ Completed 200 OK in 22ms (Views: 15.5ms | ActiveRecord: 0.0ms)
   [1m[35m (0.3ms)[0m  COMMIT
   [1m[36m (0.3ms)[0m  [1mBEGIN[0m
   [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (36.8ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL
+  [1m[36m (4.5ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (3.5ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (705.6ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."teachers", "public"."participations", "public"."subject_item_notes", "public"."subject_items", "public"."students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (15.6ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (42.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (52.4ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL
+  [1m[36m (4.5ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (38.0ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (783.0ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."participations", "public"."subject_item_notes", "public"."subject_items", "public"."students", "public"."teachers" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (14.2ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (18.6ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL
+  [1m[36m (4.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (3.1ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (662.4ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."subject_item_notes", "public"."subject_items", "public"."students", "public"."teachers", "public"."participations" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (15.1ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 15:35:22.729350"], ["updated_at", "2015-11-29 15:35:22.729350"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Dynamic Division Designer"], ["created_at", "2015-11-29 15:35:23.330109"], ["updated_at", "2015-11-29 15:35:23.330109"]]
+  [1m[36m (0.5ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 15:35:23.379226"], ["updated_at", "2015-11-29 15:35:23.379226"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 15:35:23.387026"], ["updated_at", "2015-11-29 15:35:23.387026"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 15:35:23.419081"], ["updated_at", "2015-11-29 15:35:23.419081"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "District Optimization Supervisor"], ["created_at", "2015-11-29 15:35:23.423491"], ["updated_at", "2015-11-29 15:35:23.423491"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 15:35:23.427891"], ["updated_at", "2015-11-29 15:35:23.427891"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 15:35:23.434455"], ["updated_at", "2015-11-29 15:35:23.434455"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "TA"], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 15:35:23.459575"], ["updated_at", "2015-11-29 15:35:23.459575"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Customer Intranet Representative"], ["teacher_id", 1], ["created_at", "2015-11-29 15:35:23.467579"], ["updated_at", "2015-11-29 15:35:23.467579"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 15:35:23.530935"], ["updated_at", "2015-11-29 15:35:23.530935"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "District Branding Executive"], ["created_at", "2015-11-29 15:35:23.535679"], ["updated_at", "2015-11-29 15:35:23.535679"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 15:35:23.541760"], ["updated_at", "2015-11-29 15:35:23.541760"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 15:35:23.549367"], ["updated_at", "2015-11-29 15:35:23.549367"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (1.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (15.9ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL
+  [1m[36m (4.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (3.3ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (718.9ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."subject_items", "public"."students", "public"."teachers", "public"."participations", "public"."subject_item_notes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (14.8ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:16:39.295965"], ["updated_at", "2015-11-29 16:16:39.295965"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Customer Mobility Liaison"], ["created_at", "2015-11-29 16:16:39.696214"], ["updated_at", "2015-11-29 16:16:39.696214"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:16:39.717089"], ["updated_at", "2015-11-29 16:16:39.717089"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:16:39.723096"], ["updated_at", "2015-11-29 16:16:39.723096"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:16:39.731392"], ["updated_at", "2015-11-29 16:16:39.731392"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Central Interactions Coordinator"], ["created_at", "2015-11-29 16:16:39.734788"], ["updated_at", "2015-11-29 16:16:39.734788"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:16:39.738386"], ["updated_at", "2015-11-29 16:16:39.738386"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:16:39.742027"], ["updated_at", "2015-11-29 16:16:39.742027"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "TA"], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:16:39.757333"], ["updated_at", "2015-11-29 16:16:39.757333"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Global Mobility Manager"], ["teacher_id", 1], ["created_at", "2015-11-29 16:16:39.765115"], ["updated_at", "2015-11-29 16:16:39.765115"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSubjectItemNote Load (0.6ms)[0m  SELECT "subject_item_notes".* FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 2]]
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:16:39.835676"], ["updated_at", "2015-11-29 16:16:39.835676"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Internal Security Director"], ["created_at", "2015-11-29 16:16:39.840209"], ["updated_at", "2015-11-29 16:16:39.840209"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:16:39.845328"], ["updated_at", "2015-11-29 16:16:39.845328"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:16:39.850437"], ["updated_at", "2015-11-29 16:16:39.850437"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSubjectItemNote Load (0.8ms)[0m  [1mSELECT "subject_item_notes".* FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 3]]
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (17.9ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL
+  [1m[36m (3.2ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.5ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (654.3ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."students", "public"."teachers", "public"."participations", "public"."subject_item_notes", "public"."subject_items" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (14.3ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:17:03.286498"], ["updated_at", "2015-11-29 16:17:03.286498"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Dynamic Metrics Analyst"], ["created_at", "2015-11-29 16:17:03.687613"], ["updated_at", "2015-11-29 16:17:03.687613"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:17:03.707751"], ["updated_at", "2015-11-29 16:17:03.707751"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:17:03.711537"], ["updated_at", "2015-11-29 16:17:03.711537"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:17:03.717882"], ["updated_at", "2015-11-29 16:17:03.717882"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Legacy Accountability Strategist"], ["created_at", "2015-11-29 16:17:03.720381"], ["updated_at", "2015-11-29 16:17:03.720381"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:17:03.722974"], ["updated_at", "2015-11-29 16:17:03.722974"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:17:03.725624"], ["updated_at", "2015-11-29 16:17:03.725624"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "Dr."], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:17:03.736453"], ["updated_at", "2015-11-29 16:17:03.736453"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Lead Marketing Technician"], ["teacher_id", 1], ["created_at", "2015-11-29 16:17:03.741034"], ["updated_at", "2015-11-29 16:17:03.741034"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:17:03.758216"], ["updated_at", "2015-11-29 16:17:03.758216"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Legacy Accountability Designer"], ["created_at", "2015-11-29 16:17:03.760708"], ["updated_at", "2015-11-29 16:17:03.760708"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:17:03.763341"], ["updated_at", "2015-11-29 16:17:03.763341"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:17:03.765949"], ["updated_at", "2015-11-29 16:17:03.765949"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (24.7ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL
+  [1m[36m (4.5ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (3.4ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (1340.1ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."teachers", "public"."participations", "public"."subject_item_notes", "public"."subject_items", "public"."students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (14.3ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL
+  [1m[36m (0.8ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:17:45.459202"], ["updated_at", "2015-11-29 16:17:45.459202"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "National Research Representative"], ["created_at", "2015-11-29 16:17:45.868985"], ["updated_at", "2015-11-29 16:17:45.868985"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:17:45.889678"], ["updated_at", "2015-11-29 16:17:45.889678"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:17:45.893894"], ["updated_at", "2015-11-29 16:17:45.893894"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:17:45.900829"], ["updated_at", "2015-11-29 16:17:45.900829"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Corporate Creative Planner"], ["created_at", "2015-11-29 16:17:45.903817"], ["updated_at", "2015-11-29 16:17:45.903817"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:17:45.907227"], ["updated_at", "2015-11-29 16:17:45.907227"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:17:45.910807"], ["updated_at", "2015-11-29 16:17:45.910807"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "Prof."], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:17:45.927887"], ["updated_at", "2015-11-29 16:17:45.927887"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Dynamic Markets Assistant"], ["teacher_id", 1], ["created_at", "2015-11-29 16:17:45.935341"], ["updated_at", "2015-11-29 16:17:45.935341"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:17:45.960744"], ["updated_at", "2015-11-29 16:17:45.960744"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Forward Usability Officer"], ["created_at", "2015-11-29 16:17:45.965396"], ["updated_at", "2015-11-29 16:17:45.965396"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:17:45.968490"], ["updated_at", "2015-11-29 16:17:45.968490"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:17:45.971429"], ["updated_at", "2015-11-29 16:17:45.971429"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (12.9ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL
+  [1m[36m (3.8ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.7ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (752.3ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."participations", "public"."subject_item_notes", "public"."subject_items", "public"."students", "public"."teachers" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (15.2ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:18:10.671296"], ["updated_at", "2015-11-29 16:18:10.671296"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Dynamic Marketing Engineer"], ["created_at", "2015-11-29 16:18:11.113395"], ["updated_at", "2015-11-29 16:18:11.113395"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:18:11.134022"], ["updated_at", "2015-11-29 16:18:11.134022"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:18:11.139650"], ["updated_at", "2015-11-29 16:18:11.139650"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:18:11.147051"], ["updated_at", "2015-11-29 16:18:11.147051"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Internal Accountability Coordinator"], ["created_at", "2015-11-29 16:18:11.149601"], ["updated_at", "2015-11-29 16:18:11.149601"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:18:11.152207"], ["updated_at", "2015-11-29 16:18:11.152207"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:18:11.155065"], ["updated_at", "2015-11-29 16:18:11.155065"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "Prof."], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:18:11.166517"], ["updated_at", "2015-11-29 16:18:11.166517"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Dynamic Division Planner"], ["teacher_id", 1], ["created_at", "2015-11-29 16:18:11.171285"], ["updated_at", "2015-11-29 16:18:11.171285"]]
+  [1m[36m (0.7ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = $2  [["student_id", 2], ["subject_item_id", 3]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:18:11.193723"], ["updated_at", "2015-11-29 16:18:11.193723"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Legacy Paradigm Executive"], ["created_at", "2015-11-29 16:18:11.196247"], ["updated_at", "2015-11-29 16:18:11.196247"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:18:11.198813"], ["updated_at", "2015-11-29 16:18:11.198813"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:18:11.201394"], ["updated_at", "2015-11-29 16:18:11.201394"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = $2[0m  [["student_id", 3], ["subject_item_id", 4]]
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (14.3ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL
+  [1m[36m (3.4ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.6ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (730.8ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."subject_item_notes", "public"."subject_items", "public"."students", "public"."teachers", "public"."participations" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (15.1ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:19:06.033690"], ["updated_at", "2015-11-29 16:19:06.033690"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Investor Interactions Director"], ["created_at", "2015-11-29 16:19:06.432022"], ["updated_at", "2015-11-29 16:19:06.432022"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:19:06.451916"], ["updated_at", "2015-11-29 16:19:06.451916"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:19:06.456746"], ["updated_at", "2015-11-29 16:19:06.456746"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:19:06.468669"], ["updated_at", "2015-11-29 16:19:06.468669"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "International Accountability Agent"], ["created_at", "2015-11-29 16:19:06.474778"], ["updated_at", "2015-11-29 16:19:06.474778"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:19:06.478665"], ["updated_at", "2015-11-29 16:19:06.478665"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:19:06.482073"], ["updated_at", "2015-11-29 16:19:06.482073"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "Prof."], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:19:06.495965"], ["updated_at", "2015-11-29 16:19:06.495965"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Global Operations Manager"], ["teacher_id", 1], ["created_at", "2015-11-29 16:19:06.500933"], ["updated_at", "2015-11-29 16:19:06.500933"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:19:06.516582"], ["updated_at", "2015-11-29 16:19:06.516582"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Human Usability Facilitator"], ["created_at", "2015-11-29 16:19:06.519235"], ["updated_at", "2015-11-29 16:19:06.519235"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:19:06.525747"], ["updated_at", "2015-11-29 16:19:06.525747"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:19:06.531236"], ["updated_at", "2015-11-29 16:19:06.531236"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (15.9ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.9ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (788.4ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."subject_items", "public"."students", "public"."teachers", "public"."participations", "public"."subject_item_notes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (14.9ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:26:07.510093"], ["updated_at", "2015-11-29 16:26:07.510093"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Regional Mobility Coordinator"], ["created_at", "2015-11-29 16:26:07.913646"], ["updated_at", "2015-11-29 16:26:07.913646"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:26:07.937270"], ["updated_at", "2015-11-29 16:26:07.937270"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:26:07.943490"], ["updated_at", "2015-11-29 16:26:07.943490"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:26:07.952010"], ["updated_at", "2015-11-29 16:26:07.952010"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Internal Functionality Supervisor"], ["created_at", "2015-11-29 16:26:07.955014"], ["updated_at", "2015-11-29 16:26:07.955014"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:26:07.957787"], ["updated_at", "2015-11-29 16:26:07.957787"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:26:07.961033"], ["updated_at", "2015-11-29 16:26:07.961033"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "TA"], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:26:07.985663"], ["updated_at", "2015-11-29 16:26:07.985663"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Future Directives Strategist"], ["teacher_id", 1], ["created_at", "2015-11-29 16:26:07.992504"], ["updated_at", "2015-11-29 16:26:07.992504"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:26:08.020675"], ["updated_at", "2015-11-29 16:26:08.020675"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "National Interactions Director"], ["created_at", "2015-11-29 16:26:08.023972"], ["updated_at", "2015-11-29 16:26:08.023972"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:26:08.027472"], ["updated_at", "2015-11-29 16:26:08.027472"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:26:08.031821"], ["updated_at", "2015-11-29 16:26:08.031821"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (19.4ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL
+  [1m[36m (2.6ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.9ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (711.1ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."students", "public"."teachers", "public"."participations", "public"."subject_item_notes", "public"."subject_items" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (14.8ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:27:26.703703"], ["updated_at", "2015-11-29 16:27:26.703703"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "District Configuration Orchestrator"], ["created_at", "2015-11-29 16:27:27.116116"], ["updated_at", "2015-11-29 16:27:27.116116"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:27:27.135851"], ["updated_at", "2015-11-29 16:27:27.135851"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:27:27.140990"], ["updated_at", "2015-11-29 16:27:27.140990"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:27:27.148764"], ["updated_at", "2015-11-29 16:27:27.148764"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Internal Usability Agent"], ["created_at", "2015-11-29 16:27:27.151679"], ["updated_at", "2015-11-29 16:27:27.151679"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:27:27.154499"], ["updated_at", "2015-11-29 16:27:27.154499"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:27:27.158194"], ["updated_at", "2015-11-29 16:27:27.158194"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "Dr."], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:27:27.170377"], ["updated_at", "2015-11-29 16:27:27.170377"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.9ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Customer Communications Consultant"], ["teacher_id", 1], ["created_at", "2015-11-29 16:27:27.178197"], ["updated_at", "2015-11-29 16:27:27.178197"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSubjectItemNote Load (0.5ms)[0m  SELECT "subject_item_notes".* FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 2]]
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:27:27.200749"], ["updated_at", "2015-11-29 16:27:27.200749"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Global Functionality Facilitator"], ["created_at", "2015-11-29 16:27:27.203522"], ["updated_at", "2015-11-29 16:27:27.203522"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:27:27.209381"], ["updated_at", "2015-11-29 16:27:27.209381"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:27:27.213390"], ["updated_at", "2015-11-29 16:27:27.213390"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSubjectItemNote Load (0.6ms)[0m  [1mSELECT "subject_item_notes".* FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 3]]
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (11.3ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL
+  [1m[36m (1.9ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (722.2ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."teachers", "public"."participations", "public"."subject_item_notes", "public"."subject_items", "public"."students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (4.9ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:28:33.656037"], ["updated_at", "2015-11-29 16:28:33.656037"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Regional Integration Associate"], ["created_at", "2015-11-29 16:28:34.051853"], ["updated_at", "2015-11-29 16:28:34.051853"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.6ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:28:34.072953"], ["updated_at", "2015-11-29 16:28:34.072953"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:28:34.079182"], ["updated_at", "2015-11-29 16:28:34.079182"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:28:34.088363"], ["updated_at", "2015-11-29 16:28:34.088363"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Senior Solutions Architect"], ["created_at", "2015-11-29 16:28:34.091934"], ["updated_at", "2015-11-29 16:28:34.091934"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:28:34.095738"], ["updated_at", "2015-11-29 16:28:34.095738"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:28:34.100306"], ["updated_at", "2015-11-29 16:28:34.100306"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "Dr."], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:28:34.114338"], ["updated_at", "2015-11-29 16:28:34.114338"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "District Accounts Consultant"], ["teacher_id", 1], ["created_at", "2015-11-29 16:28:34.121701"], ["updated_at", "2015-11-29 16:28:34.121701"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 2]]
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:28:34.144385"], ["updated_at", "2015-11-29 16:28:34.144385"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Internal Interactions Coordinator"], ["created_at", "2015-11-29 16:28:34.146952"], ["updated_at", "2015-11-29 16:28:34.146952"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:28:34.149384"], ["updated_at", "2015-11-29 16:28:34.149384"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:28:34.151949"], ["updated_at", "2015-11-29 16:28:34.151949"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 3]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (16.6ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL
+  [1m[36m (4.4ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (3.3ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (763.1ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."participations", "public"."subject_item_notes", "public"."subject_items", "public"."students", "public"."teachers" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (15.2ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:33:02.473390"], ["updated_at", "2015-11-29 16:33:02.473390"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Future Quality Officer"], ["created_at", "2015-11-29 16:33:02.873343"], ["updated_at", "2015-11-29 16:33:02.873343"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:33:02.894080"], ["updated_at", "2015-11-29 16:33:02.894080"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:33:02.899725"], ["updated_at", "2015-11-29 16:33:02.899725"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:33:02.907220"], ["updated_at", "2015-11-29 16:33:02.907220"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "National Infrastructure Representative"], ["created_at", "2015-11-29 16:33:02.910216"], ["updated_at", "2015-11-29 16:33:02.910216"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:33:02.912773"], ["updated_at", "2015-11-29 16:33:02.912773"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:33:02.915687"], ["updated_at", "2015-11-29 16:33:02.915687"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "TA"], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:33:02.927180"], ["updated_at", "2015-11-29 16:33:02.927180"]]
+  [1m[35m (0.6ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Internal Usability Executive"], ["teacher_id", 1], ["created_at", "2015-11-29 16:33:02.934651"], ["updated_at", "2015-11-29 16:33:02.934651"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:33:02.956236"], ["updated_at", "2015-11-29 16:33:02.956236"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "International Intranet Assistant"], ["created_at", "2015-11-29 16:33:02.959097"], ["updated_at", "2015-11-29 16:33:02.959097"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:33:02.964546"], ["updated_at", "2015-11-29 16:33:02.964546"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:33:02.967508"], ["updated_at", "2015-11-29 16:33:02.967508"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 3]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (13.0ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL
+  [1m[36m (4.2ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.9ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (730.0ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."subject_item_notes", "public"."subject_items", "public"."students", "public"."teachers", "public"."participations" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (15.0ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:34:37.826384"], ["updated_at", "2015-11-29 16:34:37.826384"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Legacy Creative Director"], ["created_at", "2015-11-29 16:34:38.229622"], ["updated_at", "2015-11-29 16:34:38.229622"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:34:38.250312"], ["updated_at", "2015-11-29 16:34:38.250312"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:34:38.255991"], ["updated_at", "2015-11-29 16:34:38.255991"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:34:38.263688"], ["updated_at", "2015-11-29 16:34:38.263688"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Dynamic Metrics Director"], ["created_at", "2015-11-29 16:34:38.266614"], ["updated_at", "2015-11-29 16:34:38.266614"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:34:38.269430"], ["updated_at", "2015-11-29 16:34:38.269430"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:34:38.272234"], ["updated_at", "2015-11-29 16:34:38.272234"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "Prof."], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:34:38.285977"], ["updated_at", "2015-11-29 16:34:38.285977"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Dynamic Assurance Officer"], ["teacher_id", 1], ["created_at", "2015-11-29 16:34:38.290624"], ["updated_at", "2015-11-29 16:34:38.290624"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:34:38.311877"], ["updated_at", "2015-11-29 16:34:38.311877"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Regional Infrastructure Executive"], ["created_at", "2015-11-29 16:34:38.317200"], ["updated_at", "2015-11-29 16:34:38.317200"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:34:38.319884"], ["updated_at", "2015-11-29 16:34:38.319884"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:34:38.322598"], ["updated_at", "2015-11-29 16:34:38.322598"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 3]]
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (11.4ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL
+  [1m[36m (3.2ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.2ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (765.6ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."subject_items", "public"."students", "public"."teachers", "public"."participations", "public"."subject_item_notes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (15.1ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:35:39.406822"], ["updated_at", "2015-11-29 16:35:39.406822"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Regional Factors Executive"], ["created_at", "2015-11-29 16:35:39.811211"], ["updated_at", "2015-11-29 16:35:39.811211"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:35:39.830426"], ["updated_at", "2015-11-29 16:35:39.830426"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:35:39.835392"], ["updated_at", "2015-11-29 16:35:39.835392"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:35:39.843369"], ["updated_at", "2015-11-29 16:35:39.843369"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "District Security Coordinator"], ["created_at", "2015-11-29 16:35:39.846453"], ["updated_at", "2015-11-29 16:35:39.846453"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:35:39.849362"], ["updated_at", "2015-11-29 16:35:39.849362"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:35:39.852765"], ["updated_at", "2015-11-29 16:35:39.852765"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "TA"], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:35:39.864360"], ["updated_at", "2015-11-29 16:35:39.864360"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "National Group Administrator"], ["teacher_id", 1], ["created_at", "2015-11-29 16:35:39.872268"], ["updated_at", "2015-11-29 16:35:39.872268"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:35:39.894226"], ["updated_at", "2015-11-29 16:35:39.894226"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Future Infrastructure Supervisor"], ["created_at", "2015-11-29 16:35:39.896719"], ["updated_at", "2015-11-29 16:35:39.896719"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:35:39.899908"], ["updated_at", "2015-11-29 16:35:39.899908"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:35:39.905492"], ["updated_at", "2015-11-29 16:35:39.905492"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 3]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (27.2ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL
+  [1m[36m (4.4ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (3.4ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (750.8ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."students", "public"."teachers", "public"."participations", "public"."subject_item_notes", "public"."subject_items" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (15.0ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:36:02.696215"], ["updated_at", "2015-11-29 16:36:02.696215"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Corporate Mobility Producer"], ["created_at", "2015-11-29 16:36:03.094218"], ["updated_at", "2015-11-29 16:36:03.094218"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:36:03.115798"], ["updated_at", "2015-11-29 16:36:03.115798"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:36:03.122084"], ["updated_at", "2015-11-29 16:36:03.122084"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:36:03.130810"], ["updated_at", "2015-11-29 16:36:03.130810"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Investor Intranet Administrator"], ["created_at", "2015-11-29 16:36:03.134225"], ["updated_at", "2015-11-29 16:36:03.134225"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:36:03.137729"], ["updated_at", "2015-11-29 16:36:03.137729"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:36:03.141482"], ["updated_at", "2015-11-29 16:36:03.141482"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "Dr."], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:36:03.157519"], ["updated_at", "2015-11-29 16:36:03.157519"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Dynamic Interactions Producer"], ["teacher_id", 1], ["created_at", "2015-11-29 16:36:03.163127"], ["updated_at", "2015-11-29 16:36:03.163127"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 2]]
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:36:03.187268"], ["updated_at", "2015-11-29 16:36:03.187268"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Customer Integration Strategist"], ["created_at", "2015-11-29 16:36:03.189901"], ["updated_at", "2015-11-29 16:36:03.189901"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:36:03.192427"], ["updated_at", "2015-11-29 16:36:03.192427"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:36:03.195398"], ["updated_at", "2015-11-29 16:36:03.195398"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 3]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (17.4ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL
+  [1m[36m (3.5ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.4ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (753.6ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."teachers", "public"."participations", "public"."subject_item_notes", "public"."subject_items", "public"."students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (15.2ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:42:07.429322"], ["updated_at", "2015-11-29 16:42:07.429322"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Global Division Facilitator"], ["created_at", "2015-11-29 16:42:07.840925"], ["updated_at", "2015-11-29 16:42:07.840925"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:42:07.861351"], ["updated_at", "2015-11-29 16:42:07.861351"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:42:07.867120"], ["updated_at", "2015-11-29 16:42:07.867120"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:42:07.874821"], ["updated_at", "2015-11-29 16:42:07.874821"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Customer Branding Consultant"], ["created_at", "2015-11-29 16:42:07.877796"], ["updated_at", "2015-11-29 16:42:07.877796"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:42:07.880367"], ["updated_at", "2015-11-29 16:42:07.880367"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:42:07.883562"], ["updated_at", "2015-11-29 16:42:07.883562"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "Dr."], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:42:07.896416"], ["updated_at", "2015-11-29 16:42:07.896416"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Dynamic Research Planner"], ["teacher_id", 1], ["created_at", "2015-11-29 16:42:07.904803"], ["updated_at", "2015-11-29 16:42:07.904803"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.0ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 2]]
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:42:07.930922"], ["updated_at", "2015-11-29 16:42:07.930922"]]
+  [1m[36m (0.7ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Forward Identity Officer"], ["created_at", "2015-11-29 16:42:07.936637"], ["updated_at", "2015-11-29 16:42:07.936637"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:42:07.940145"], ["updated_at", "2015-11-29 16:42:07.940145"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:42:07.943816"], ["updated_at", "2015-11-29 16:42:07.943816"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 3]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (12.6ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL
+  [1m[36m (4.3ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.9ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (718.4ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."participations", "public"."subject_item_notes", "public"."subject_items", "public"."students", "public"."teachers" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (16.3ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:42:46.210610"], ["updated_at", "2015-11-29 16:42:46.210610"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Forward Infrastructure Facilitator"], ["created_at", "2015-11-29 16:42:46.615475"], ["updated_at", "2015-11-29 16:42:46.615475"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:42:46.635858"], ["updated_at", "2015-11-29 16:42:46.635858"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:42:46.640825"], ["updated_at", "2015-11-29 16:42:46.640825"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:42:46.648116"], ["updated_at", "2015-11-29 16:42:46.648116"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Direct Configuration Administrator"], ["created_at", "2015-11-29 16:42:46.650662"], ["updated_at", "2015-11-29 16:42:46.650662"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:42:46.653222"], ["updated_at", "2015-11-29 16:42:46.653222"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:42:46.656030"], ["updated_at", "2015-11-29 16:42:46.656030"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "Prof."], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:42:46.669302"], ["updated_at", "2015-11-29 16:42:46.669302"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.8ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Chief Interactions Representative"], ["teacher_id", 1], ["created_at", "2015-11-29 16:42:46.677710"], ["updated_at", "2015-11-29 16:42:46.677710"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 2]]
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:42:46.703067"], ["updated_at", "2015-11-29 16:42:46.703067"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Principal Tactics Technician"], ["created_at", "2015-11-29 16:42:46.709222"], ["updated_at", "2015-11-29 16:42:46.709222"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:42:46.713178"], ["updated_at", "2015-11-29 16:42:46.713178"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:42:46.717121"], ["updated_at", "2015-11-29 16:42:46.717121"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 3]]
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (20.0ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL
+  [1m[36m (4.1ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.9ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (674.4ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."subject_item_notes", "public"."subject_items", "public"."students", "public"."teachers", "public"."participations" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (15.3ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:43:42.400556"], ["updated_at", "2015-11-29 16:43:42.400556"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "District Infrastructure Designer"], ["created_at", "2015-11-29 16:43:42.798189"], ["updated_at", "2015-11-29 16:43:42.798189"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:43:42.818649"], ["updated_at", "2015-11-29 16:43:42.818649"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:43:42.824020"], ["updated_at", "2015-11-29 16:43:42.824020"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:43:42.831401"], ["updated_at", "2015-11-29 16:43:42.831401"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Lead Creative Coordinator"], ["created_at", "2015-11-29 16:43:42.834302"], ["updated_at", "2015-11-29 16:43:42.834302"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:43:42.836946"], ["updated_at", "2015-11-29 16:43:42.836946"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:43:42.840092"], ["updated_at", "2015-11-29 16:43:42.840092"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "TA"], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:43:42.851398"], ["updated_at", "2015-11-29 16:43:42.851398"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "District Identity Architect"], ["teacher_id", 1], ["created_at", "2015-11-29 16:43:42.856741"], ["updated_at", "2015-11-29 16:43:42.856741"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 2]]
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:43:42.881451"], ["updated_at", "2015-11-29 16:43:42.881451"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Lead Branding Representative"], ["created_at", "2015-11-29 16:43:42.883897"], ["updated_at", "2015-11-29 16:43:42.883897"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:43:42.886710"], ["updated_at", "2015-11-29 16:43:42.886710"]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:43:42.892343"], ["updated_at", "2015-11-29 16:43:42.892343"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 3]]
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (7.4ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL
+  [1m[36m (4.4ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (3.1ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (784.4ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."subject_items", "public"."students", "public"."teachers", "public"."participations", "public"."subject_item_notes" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (4.2ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:44:35.535282"], ["updated_at", "2015-11-29 16:44:35.535282"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Human Optimization Manager"], ["created_at", "2015-11-29 16:44:35.929089"], ["updated_at", "2015-11-29 16:44:35.929089"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.9ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:44:35.949605"], ["updated_at", "2015-11-29 16:44:35.949605"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:44:35.954953"], ["updated_at", "2015-11-29 16:44:35.954953"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:44:35.962807"], ["updated_at", "2015-11-29 16:44:35.962807"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Internal Infrastructure Representative"], ["created_at", "2015-11-29 16:44:35.965661"], ["updated_at", "2015-11-29 16:44:35.965661"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:44:35.968304"], ["updated_at", "2015-11-29 16:44:35.968304"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:44:35.972430"], ["updated_at", "2015-11-29 16:44:35.972430"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "Dr."], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:44:35.986573"], ["updated_at", "2015-11-29 16:44:35.986573"]]
+  [1m[35m (0.8ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Central Data Producer"], ["teacher_id", 1], ["created_at", "2015-11-29 16:44:35.995210"], ["updated_at", "2015-11-29 16:44:35.995210"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 2]]
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:44:36.018975"], ["updated_at", "2015-11-29 16:44:36.018975"]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Future Division Representative"], ["created_at", "2015-11-29 16:44:36.025064"], ["updated_at", "2015-11-29 16:44:36.025064"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:44:36.028125"], ["updated_at", "2015-11-29 16:44:36.028125"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:44:36.031188"], ["updated_at", "2015-11-29 16:44:36.031188"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 3]]
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (5.6ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (689.9ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."students", "public"."teachers", "public"."participations", "public"."subject_item_notes", "public"."subject_items" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (14.3ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:45:03.053042"], ["updated_at", "2015-11-29 16:45:03.053042"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Central Creative Director"], ["created_at", "2015-11-29 16:45:03.462693"], ["updated_at", "2015-11-29 16:45:03.462693"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:45:03.483140"], ["updated_at", "2015-11-29 16:45:03.483140"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:45:03.487825"], ["updated_at", "2015-11-29 16:45:03.487825"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:45:03.495779"], ["updated_at", "2015-11-29 16:45:03.495779"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Customer Division Strategist"], ["created_at", "2015-11-29 16:45:03.499540"], ["updated_at", "2015-11-29 16:45:03.499540"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:45:03.503147"], ["updated_at", "2015-11-29 16:45:03.503147"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:45:03.507499"], ["updated_at", "2015-11-29 16:45:03.507499"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.5ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "Prof."], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:45:03.519829"], ["updated_at", "2015-11-29 16:45:03.519829"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Direct Program Administrator"], ["teacher_id", 1], ["created_at", "2015-11-29 16:45:03.527813"], ["updated_at", "2015-11-29 16:45:03.527813"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 2]]
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:45:03.550310"], ["updated_at", "2015-11-29 16:45:03.550310"]]
+  [1m[36m (0.6ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Principal Configuration Orchestrator"], ["created_at", "2015-11-29 16:45:03.555626"], ["updated_at", "2015-11-29 16:45:03.555626"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:45:03.558523"], ["updated_at", "2015-11-29 16:45:03.558523"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:45:03.561244"], ["updated_at", "2015-11-29 16:45:03.561244"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.7ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 3]]
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (10.3ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL
+  [1m[36m (1.8ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (757.3ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."teachers", "public"."participations", "public"."subject_item_notes", "public"."subject_items", "public"."students" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (14.8ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:46:37.238029"], ["updated_at", "2015-11-29 16:46:37.238029"]]
+  [1m[35m (0.5ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Investor Interactions Manager"], ["created_at", "2015-11-29 16:46:37.645114"], ["updated_at", "2015-11-29 16:46:37.645114"]]
+  [1m[36m (0.4ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (2.3ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:46:37.666819"], ["updated_at", "2015-11-29 16:46:37.666819"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 1], ["subject_item_id", 1], ["created_at", "2015-11-29 16:46:37.672981"], ["updated_at", "2015-11-29 16:46:37.672981"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:46:37.682191"], ["updated_at", "2015-11-29 16:46:37.682191"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["title", "Direct Research Representative"], ["created_at", "2015-11-29 16:46:37.686069"], ["updated_at", "2015-11-29 16:46:37.686069"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 5], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:46:37.690116"], ["updated_at", "2015-11-29 16:46:37.690116"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 4], ["student_id", 2], ["subject_item_id", 2], ["created_at", "2015-11-29 16:46:37.694715"], ["updated_at", "2015-11-29 16:46:37.694715"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.8ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "teachers" ("academic_title", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["academic_title", "TA"], ["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:46:37.711469"], ["updated_at", "2015-11-29 16:46:37.711469"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Investor Tactics Administrator"], ["teacher_id", 1], ["created_at", "2015-11-29 16:46:37.717420"], ["updated_at", "2015-11-29 16:46:37.717420"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "John"], ["last_name", "Smith"], ["created_at", "2015-11-29 16:46:37.744882"], ["updated_at", "2015-11-29 16:46:37.744882"]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "subject_items" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Customer Interactions Consultant"], ["created_at", "2015-11-29 16:46:37.748022"], ["updated_at", "2015-11-29 16:46:37.748022"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["value", 5], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:46:37.751411"], ["updated_at", "2015-11-29 16:46:37.751411"]]
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "subject_item_notes" ("value", "student_id", "subject_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["value", 4], ["student_id", 3], ["subject_item_id", 4], ["created_at", "2015-11-29 16:46:37.755073"], ["updated_at", "2015-11-29 16:46:37.755073"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.6ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 3]]
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (14.3ms)[0m  ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "participations" DISABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" DISABLE TRIGGER ALL;ALTER TABLE "subject_items" DISABLE TRIGGER ALL;ALTER TABLE "students" DISABLE TRIGGER ALL;ALTER TABLE "teachers" DISABLE TRIGGER ALL
+  [1m[36m (2.5ms)[0m  [1m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+            tablename <> 'schema_migrations' AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.1ms)[0m  select table_name from information_schema.views where table_schema = 'workshops_test'
+  [1m[36m (754.9ms)[0m  [1mTRUNCATE TABLE "public"."users", "public"."participations", "public"."subject_item_notes", "public"."subject_items", "public"."students", "public"."teachers" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (14.9ms)[0m  ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "subject_item_notes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "subject_items" ENABLE TRIGGER ALL;ALTER TABLE "students" ENABLE TRIGGER ALL;ALTER TABLE "teachers" ENABLE TRIGGER ALL;ALTER TABLE "participations" ENABLE TRIGGER ALL
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
