@@ -10016,3 +10016,125 @@ Processing by StudentsController#subjects as HTML
   Rendered layouts/_navigation.html.haml (1.0ms)
   Rendered layouts/_messages.html.haml (0.1ms)
 Completed 200 OK in 148ms (Views: 143.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/report/subjects" for 127.0.0.1 at 2015-11-30 22:59:44 +0100
+Processing by ReportsController#subjects as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubjectItem Load (1.4ms)[0m  SELECT "subject_items".* FROM "subject_items"
+  Rendered reports/subjects.html.haml within layouts/application (3.9ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 164ms (Views: 158.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-30 23:01:22 +0100
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.6ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/_student.haml (4.3ms)
+  Rendered students/index.html.haml within layouts/application (10.3ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 178ms (Views: 174.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/students/1/subjects" for 127.0.0.1 at 2015-11-30 23:01:25 +0100
+Processing by StudentsController#subjects as HTML
+  Parameters: {"student_id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.6ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubjectItem Load (0.5ms)[0m  [1mSELECT "subject_items".* FROM "subject_items" WHERE "subject_items"."student_id" = $1[0m  [["student_id", 1]]
+  Rendered students/subjects.html.haml within layouts/application (5.6ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 138ms (Views: 131.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-30 23:01:32 +0100
+Processing by StudentsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (1.2ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered students/_student.haml (4.0ms)
+  Rendered students/index.html.haml within layouts/application (11.1ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 167ms (Views: 162.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-30 23:01:33 +0100
+Processing by VisitorsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered visitors/index.html.haml within layouts/application (0.5ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 187ms (Views: 182.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/report/subjects" for 127.0.0.1 at 2015-11-30 23:01:35 +0100
+Processing by ReportsController#subjects as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubjectItem Load (0.7ms)[0m  SELECT "subject_items".* FROM "subject_items"
+  Rendered reports/subjects.html.haml within layouts/application (2.1ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 155ms (Views: 151.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-30 23:02:23 +0100
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.6ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/_student.haml (3.5ms)
+  Rendered students/index.html.haml within layouts/application (9.2ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 153ms (Views: 147.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/students/1/edit" for 127.0.0.1 at 2015-11-30 23:02:26 +0100
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.7ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSubjectItem Load (0.6ms)[0m  [1mSELECT "subject_items".* FROM "subject_items" WHERE "subject_items"."student_id" = $1[0m  [["student_id", 1]]
+  [1m[35mSubjectItem Load (0.6ms)[0m  SELECT "subject_items".* FROM "subject_items"  ORDER BY "subject_items"."title" ASC
+  Rendered students/_form.html.haml (26.1ms)
+  Rendered students/edit.html.haml within layouts/application (32.4ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 178ms (Views: 172.4ms | ActiveRecord: 2.3ms)
+
+
+Started PATCH "/students/1" for 127.0.0.1 at 2015-11-30 23:02:31 +0100
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9yO1mfRdaLePsp1BmiUvnoyLcyEyzm9TciED6Vcflt5H1l5ww3FJxhh/F8LbB+co5uamVLlIfWJkRrigm2rAJQ==", "student"=>{"first_name"=>"Marcinek", "last_name"=>"Borski", "birthdate(3i)"=>"6", "birthdate(2i)"=>"10", "birthdate(1i)"=>"2002", "subject_item_ids"=>[""]}, "commit"=>"Update Student", "id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.5ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+Unpermitted parameter: subject_item_ids
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  UPDATE "students" SET "first_name" = $1, "updated_at" = $2 WHERE "students"."id" = $3  [["first_name", "Marcinek"], ["updated_at", "2015-11-30 22:02:31.657579"], ["id", 1]]
+  [1m[36m (60.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/students/1
+Completed 302 Found in 85ms (ActiveRecord: 68.6ms)
+
+
+Started GET "/students/1" for 127.0.0.1 at 2015-11-30 23:02:31 +0100
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered students/show.html.haml within layouts/application (5.0ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.4ms)
+Completed 200 OK in 156ms (Views: 152.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/report/subjects" for 127.0.0.1 at 2015-11-30 23:04:24 +0100
+Processing by ReportsController#subjects as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSubjectItem Load (0.5ms)[0m  [1mSELECT "subject_items".* FROM "subject_items"[0m
+  Rendered reports/subjects.html.haml within layouts/application (1.9ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 155ms (Views: 151.0ms | ActiveRecord: 1.2ms)
