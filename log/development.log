@@ -10138,3 +10138,221 @@ Processing by ReportsController#subjects as HTML
   Rendered layouts/_navigation.html.haml (1.1ms)
   Rendered layouts/_messages.html.haml (0.1ms)
 Completed 200 OK in 155ms (Views: 151.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-30 23:54:58 +0100
+Processing by StudentsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (1.0ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered students/_student.haml (6.4ms)
+  Rendered students/index.html.haml within layouts/application (22.7ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 181ms (Views: 157.9ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2015-11-30 23:54:59 +0100
+Processing by StudentsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSubjectItem Load (0.5ms)[0m  [1mSELECT "subject_items".* FROM "subject_items"  ORDER BY "subject_items"."title" ASC[0m
+  Rendered students/_form.html.haml (35.5ms)
+  Rendered students/new.html.haml within layouts/application (36.6ms)
+  Rendered layouts/_navigation.html.haml (0.9ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 171ms (Views: 165.6ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/students" for 127.0.0.1 at 2015-11-30 23:55:14 +0100
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l5hC+6PyXjucQt8x5ps1o1S9AQ/0nn5gRhjdEIg5l9MnbakSlN5/SguPVbKnuf0VPtDUen8YbFFQf2ZZREzBKA==", "student"=>{"first_name"=>"Jan ", "last_name"=>"Abacki", "birthdate(3i)"=>"4", "birthdate(2i)"=>"9", "birthdate(1i)"=>"1995", "subject_item_ids"=>[""]}, "commit"=>"Create Student"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (27.9ms)[0m  INSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Jan "], ["last_name", "Abacki"], ["birthdate", "1995-09-04"], ["created_at", "2015-11-30 22:55:14.873195"], ["updated_at", "2015-11-30 22:55:14.873195"]]
+  [1m[36m (33.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/students/3
+Completed 302 Found in 78ms (ActiveRecord: 62.9ms)
+
+
+Started GET "/students/3" for 127.0.0.1 at 2015-11-30 23:55:14 +0100
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered students/show.html.haml within layouts/application (4.8ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 157ms (Views: 152.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/report/subjects" for 127.0.0.1 at 2015-11-30 23:55:18 +0100
+Processing by ReportsController#subjects as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSubjectItem Load (1.2ms)[0m  [1mSELECT "subject_items".* FROM "subject_items"[0m
+  Rendered reports/subjects.html.haml within layouts/application (3.4ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 151ms (Views: 147.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-12-01 00:02:04 +0100
+Processing by TeachersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTeacher Load (0.8ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/_teacher.html.haml (1.9ms)
+  Rendered teachers/index.html.haml within layouts/application (43.8ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 191ms (Views: 183.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-01 00:02:07 +0100
+Processing by StudentsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (0.8ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered students/_student.haml (5.9ms)
+  Rendered students/index.html.haml within layouts/application (11.2ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 159ms (Views: 154.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-12-01 00:02:08 +0100
+Processing by TeachersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTeacher Load (0.9ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/_teacher.html.haml (2.6ms)
+  Rendered teachers/index.html.haml within layouts/application (10.0ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 178ms (Views: 173.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-01 00:02:09 +0100
+Processing by StudentsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (0.5ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered students/_student.haml (6.3ms)
+  Rendered students/index.html.haml within layouts/application (9.7ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 165ms (Views: 162.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-12-01 00:02:10 +0100
+Processing by TeachersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTeacher Load (0.5ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/_teacher.html.haml (4.2ms)
+  Rendered teachers/index.html.haml within layouts/application (8.3ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 177ms (Views: 174.5ms | ActiveRecord: 0.9ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveStudentFromSubjectItems (20151130231522)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (247.5ms)[0m  [1mALTER TABLE "subject_items" DROP "student_id"[0m
+  [1m[35m (13.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'subject_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveStudentFromSubjectItems (20151130231522)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'subject_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (0.9ms)[0m  ALTER TABLE "subject_items" DROP CONSTRAINT "fk_rails_c0133ef62c"
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "subject_items" DROP "student_id"[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151130231522"]]
+  [1m[36m (7.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.4ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'participations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'students'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'subject_item_notes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'subject_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.3ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'teachers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
