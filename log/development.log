@@ -9847,3 +9847,25 @@ Processing by TeachersController#new as HTML
   Rendered layouts/_navigation.html.haml (2.2ms)
   Rendered layouts/_messages.html.haml (0.2ms)
 Completed 200 OK in 243ms (Views: 237.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-11-30 22:36:27 +0100
+Processing by StudentsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (1.5ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered students/_student.haml (2.8ms)
+  Rendered students/index.html.haml within layouts/application (9.5ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 155ms (Views: 151.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2015-11-30 22:36:29 +0100
+Processing by StudentsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSubjectItem Load (0.4ms)[0m  [1mSELECT "subject_items".* FROM "subject_items"  ORDER BY "subject_items"."title" ASC[0m
+  Rendered students/_form.html.haml (33.8ms)
+  Rendered students/new.html.haml within layouts/application (38.3ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 192ms (Views: 188.9ms | ActiveRecord: 1.0ms)
