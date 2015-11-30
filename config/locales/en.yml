@@ -11,7 +11,7 @@ en:
     created: "%{resource} has been created!"
     updated: "%{resource} has been updated!"
     deleted: "%{resource} has been deleted!"
-    actions: actions
+    actions: Actions
     edit: edit
     show: show
     delete: delete
