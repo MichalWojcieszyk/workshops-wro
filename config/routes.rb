@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'payments/create'
+
+  get 'payments/update'
+
+  get 'payments/destroy'
+
   devise_for :users
 
   resources :students do
