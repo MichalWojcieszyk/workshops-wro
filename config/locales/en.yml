@@ -33,6 +33,11 @@ en:
     columns:
       full_name: Full name
       avg_notes: Notes average
+  payments:
+    columns:
+      student: Student
+      date: Date
+      sum: Sum
   simple_form:
     labels:
       student:
@@ -45,3 +50,7 @@ en:
         last_name: Last name
         academic_title: Academic Title
         subject_items: Subjects
+      payment:
+        student: Student
+        sum: Sum to pay
+        date: Payment date
