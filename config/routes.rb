@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'payments/create'
-
-  get 'payments/update'
-
-  get 'payments/destroy'
-
   devise_for :users
 
   resources :students do
@@ -18,6 +12,8 @@ Rails.application.routes.draw do
   resources :visitors, only: [:index]
 
   get 'report/subjects', to: 'reports#subjects'
+
+  resources :payments
 
   root to: "visitors#index"
 end
