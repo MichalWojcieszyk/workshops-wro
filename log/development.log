@@ -13508,3 +13508,159 @@ Processing by PaymentsController#new as HTML
   Rendered layouts/_navigation.html.haml (1.9ms)
   Rendered layouts/_messages.html.haml (0.1ms)
 Completed 200 OK in 179ms (Views: 176.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/payments/new" for 127.0.0.1 at 2015-12-01 23:39:14 +0100
+Processing by PaymentsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (0.5ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."last_name" ASC[0m
+  Rendered payments/_form.html.haml (407.5ms)
+  Rendered payments/new.html.haml within layouts/application (408.4ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 602ms (Views: 577.8ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/payments/new" for 127.0.0.1 at 2015-12-01 23:39:26 +0100
+Processing by PaymentsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (0.5ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."last_name" ASC[0m
+  Rendered payments/_form.html.haml (506.3ms)
+  Rendered payments/new.html.haml within layouts/application (507.5ms)
+  Rendered layouts/_navigation.html.haml (2.3ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 721ms (Views: 693.3ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-01 23:39:33 +0100
+Processing by StudentsController#index as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (0.7ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered students/_student.haml (37.1ms)
+  Rendered students/index.html.haml within layouts/application (49.9ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 250ms (Views: 242.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-12-01 23:39:34 +0100
+Processing by TeachersController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTeacher Load (0.5ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/_teacher.html.haml (4.0ms)
+  Rendered teachers/index.html.haml within layouts/application (14.9ms)
+  Rendered layouts/_navigation.html.haml (3.1ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 181ms (Views: 175.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-01 23:39:35 +0100
+Processing by PaymentsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered payments/_payment.html.haml (1.5ms)
+  Rendered payments/index.html.haml within layouts/application (13.8ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 170ms (Views: 165.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/payments/new" for 127.0.0.1 at 2015-12-01 23:39:37 +0100
+Processing by PaymentsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (1.5ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."last_name" ASC
+  Rendered payments/_form.html.haml (23.8ms)
+  Rendered payments/new.html.haml within layouts/application (25.8ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 192ms (Views: 186.4ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/payments" for 127.0.0.1 at 2015-12-01 23:39:46 +0100
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rhmVsD+hsVjDcDyot4bkHwCMUaBt3rV503E+jGoq7iPHZ3c6Z5ipxy/PEFxtIzp/sW2n+AS5fsVs8mhnXlHGtw==", "payment"=>{"sum"=>"6767", "date(3i)"=>"1", "date(2i)"=>"12", "date(1i)"=>"2007", "student_id"=>"2"}, "commit"=>"Create Payment"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Unpermitted parameter: student_id
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mStudent Load (1.2ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."last_name" ASC
+  Rendered payments/_form.html.haml (28.7ms)
+  Rendered payments/new.html.haml within layouts/application (29.7ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 203ms (Views: 192.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-12-01 23:39:48 +0100
+Processing by TeachersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTeacher Load (0.7ms)[0m  SELECT "teachers".* FROM "teachers"
+  Rendered teachers/_teacher.html.haml (5.9ms)
+  Rendered teachers/index.html.haml within layouts/application (12.0ms)
+  Rendered layouts/_navigation.html.haml (1.0ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 187ms (Views: 180.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-01 23:39:58 +0100
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.8ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/_student.haml (23.3ms)
+  Rendered students/index.html.haml within layouts/application (29.5ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 216ms (Views: 210.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-01 23:40:00 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered payments/_payment.html.haml (0.1ms)
+  Rendered payments/index.html.haml within layouts/application (9.8ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 187ms (Views: 182.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-12-01 23:40:01 +0100
+Processing by TeachersController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTeacher Load (0.8ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/_teacher.html.haml (5.2ms)
+  Rendered teachers/index.html.haml within layouts/application (11.2ms)
+  Rendered layouts/_navigation.html.haml (1.4ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 211ms (Views: 205.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/teachers/1" for 127.0.0.1 at 2015-12-01 23:40:03 +0100
+Processing by TeachersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTeacher Load (0.3ms)[0m  [1mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered teachers/show.html.haml within layouts/application (3.4ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 141ms (Views: 137.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/teachers/1/subjects" for 127.0.0.1 at 2015-12-01 23:40:13 +0100
+Processing by TeachersController#subjects as HTML
+  Parameters: {"teacher_id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTeacher Load (0.5ms)[0m  [1mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubjectItem Load (0.5ms)[0m  SELECT "subject_items".* FROM "subject_items" WHERE "subject_items"."teacher_id" = $1  [["teacher_id", 1]]
+  Rendered teachers/subjects.html.haml within layouts/application (72.0ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 228ms (Views: 222.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-01 23:40:17 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered payments/_payment.html.haml (0.1ms)
+  Rendered payments/index.html.haml within layouts/application (9.5ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 186ms (Views: 182.1ms | ActiveRecord: 1.2ms)
