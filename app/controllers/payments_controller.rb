@@ -12,7 +12,7 @@ class PaymentsController < ApplicationController
   end
 
   def update
-  	if payment.update
+  	if payment.save
   		redirect_to payment_path(payment), notice: I18n.t('shared.updated', resource: 'Payment')
   	else
   		render :edit

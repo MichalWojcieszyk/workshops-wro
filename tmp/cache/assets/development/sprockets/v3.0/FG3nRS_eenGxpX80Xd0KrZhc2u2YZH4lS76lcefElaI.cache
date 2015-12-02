@@ -1,0 +1,15 @@
+I"û(function() {
+  $(document).ready(function() {
+    return $('.payments table').dataTable({
+      'order': [1, 'asc'],
+      'columnDefs': [
+        {
+          'orderable': false,
+          'targets': 3
+        }
+      ]
+    });
+  });
+
+}).call(this);
+:ET
