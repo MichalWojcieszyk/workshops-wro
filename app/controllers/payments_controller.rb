@@ -27,6 +27,6 @@ class PaymentsController < ApplicationController
   private
 
   def payment_params
-  	params.require(:payment).permit(:sum, :date, student_ids: [])
+  	params.require(:payment).permit(:sum, :date, :student_id)
   end
 end

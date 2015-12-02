@@ -34,7 +34,7 @@ en:
     columns:
       full_name: Full name
       avg_notes: Notes average
-  payments:
+  payment:
     columns:
       student: Student
       date: Date

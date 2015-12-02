@@ -1,5 +1,5 @@
 class Payment < ActiveRecord::Base
 	belongs_to :student
 
-	validates :sum, :date, :student_id, presence: true
+	validates :sum, :date, :student, presence: true
 end
