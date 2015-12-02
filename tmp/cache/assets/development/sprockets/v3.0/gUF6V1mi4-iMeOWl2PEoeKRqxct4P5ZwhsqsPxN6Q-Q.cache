@@ -1,0 +1,11 @@
+I"´(function() {
+  $(document).ready(function() {
+    $('.payments').dataTable;
+    return {
+      sPaginationType: "full_numbers",
+      bJQueryUI: true
+    };
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,9 @@
+I"Ž(function() {
+  $(document).ready(function() {
+    return $('.payments').DataTable({
+      'order': [3, "desc"]
+    });
+  });
+
+}).call(this);
+:ET

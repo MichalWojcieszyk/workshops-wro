@@ -1,2 +1,3 @@
 $(document).ready ->
-  $('.payments').dataTable()
+  $(".payments").dataTable 
+  	jQueryUI: true

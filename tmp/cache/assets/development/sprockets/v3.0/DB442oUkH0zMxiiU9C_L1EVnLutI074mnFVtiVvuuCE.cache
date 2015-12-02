@@ -1,0 +1,15 @@
+I"(function() {
+  $(document).ready(function() {
+    $('.payments').dataTable();
+    return $('.date_picker').datepicker({
+      startView: 2,
+      autoclose: true,
+      format: 'dd/mm/yyyy',
+      defaultViewDate: {
+        year: 1960
+      }
+    });
+  });
+
+}).call(this);
+:ET

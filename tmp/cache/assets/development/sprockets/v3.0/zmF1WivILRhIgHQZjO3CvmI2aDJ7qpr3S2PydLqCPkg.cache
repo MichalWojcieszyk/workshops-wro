@@ -1,0 +1,19 @@
+I"”(function() {
+  $(document).ready(function() {
+    $('.payments').dataTable();
+    $('.date_picker').datepicker({
+      startView: 2,
+      autoclose: true,
+      format: 'dd/mm/yyyy',
+      defaultViewDate: {
+        year: 1960
+      }
+    });
+    return this.showBirthdayForm = function() {
+      $(".student_birthdate").toggle();
+      return $("#birthdate_link").hide();
+    };
+  });
+
+}).call(this);
+:ET

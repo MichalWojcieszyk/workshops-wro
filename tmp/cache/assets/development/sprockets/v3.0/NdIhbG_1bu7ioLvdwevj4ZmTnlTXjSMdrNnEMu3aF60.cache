@@ -1,0 +1,7 @@
+I"o(function() {
+  $(document).ready(function() {
+    return $(".payments").DataTable;
+  });
+
+}).call(this);
+:ET
