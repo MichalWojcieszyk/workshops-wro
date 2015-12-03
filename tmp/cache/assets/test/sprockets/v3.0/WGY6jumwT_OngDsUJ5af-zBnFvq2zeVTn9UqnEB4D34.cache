@@ -1,0 +1,9 @@
+I"ˆ(function() {
+  $(document).ready(function() {
+    return $(".payments").dataTable({
+      jQueryUI: true
+    });
+  });
+
+}).call(this);
+:ET
