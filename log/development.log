@@ -22679,3 +22679,620 @@ Processing by PaymentsController#index as HTML
   Rendered layouts/_navigation.html.haml (1.3ms)
   Rendered layouts/_messages.html.haml (0.2ms)
 Completed 200 OK in 1507ms (Views: 1500.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 13:15:05 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (39.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+Completed 401 Unauthorized in 18ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 13:15:07 +0100
+Processing by VisitorsController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-12-03 13:15:07 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/michal/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (62.5ms)
+  Rendered layouts/_navigation.html.haml (6.2ms)
+  Rendered layouts/_messages.html.haml (1.7ms)
+Completed 200 OK in 2580ms (Views: 2415.2ms | ActiveRecord: 150.7ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-12-03 13:15:20 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4XUmZmIOo+ax2LSkWLhJwZHrSzQZDTRfZUtO933fe+7TT7uFk6EwksxrG98Ccy/WHW6v7PTy/hSBgMHdkmwQhA==", "user"=>{"email"=>"adam@adam.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (68.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "adam@adam.com"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2015-12-02 15:54:05.278814"], ["current_sign_in_at", "2015-12-03 12:15:20.605207"], ["sign_in_count", 9], ["updated_at", "2015-12-03 12:15:20.606697"], ["id", 1]]
+  [1m[36m (13.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 213ms (ActiveRecord: 82.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 13:15:20 +0100
+Processing by VisitorsController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered visitors/index.html.haml within layouts/application (2.7ms)
+  Rendered layouts/_navigation.html.haml (1.5ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 852ms (Views: 848.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-03 13:15:54 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (89.7ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mStudent Load (25.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mStudent Load (0.6ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered payments/_payment.html.haml (150.1ms)
+  Rendered payments/index.html.haml within layouts/application (271.1ms)
+  Rendered layouts/_navigation.html.haml (5.8ms)
+  Rendered layouts/_messages.html.haml (1.5ms)
+Completed 200 OK in 1008ms (Views: 864.4ms | ActiveRecord: 141.6ms)
+
+
+Started GET "/report/subjects" for 127.0.0.1 at 2015-12-03 13:16:01 +0100
+Processing by ReportsController#subjects as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubjectItem Load (49.1ms)[0m  SELECT "subject_items".* FROM "subject_items"
+  Rendered reports/subjects.html.haml within layouts/application (62.6ms)
+  Rendered layouts/_navigation.html.haml (1.4ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 819ms (Views: 765.1ms | ActiveRecord: 51.1ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-03 13:16:03 +0100
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.8ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/_student.haml (11.9ms)
+  Rendered students/index.html.haml within layouts/application (22.4ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 769ms (Views: 762.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 13:16:05 +0100
+Processing by VisitorsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered visitors/index.html.haml within layouts/application (2.8ms)
+  Rendered layouts/_navigation.html.haml (1.3ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 751ms (Views: 746.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 13:17:37 +0100
+Processing by VisitorsController#index as HTML
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered visitors/index.html.haml within layouts/application (0.2ms)
+  Rendered layouts/_navigation.html.haml (2.8ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 926ms (Views: 918.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-03 13:17:41 +0100
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.9ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/_student.haml (9.5ms)
+  Rendered students/index.html.haml within layouts/application (16.6ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 744ms (Views: 738.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-12-03 13:17:43 +0100
+Processing by TeachersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTeacher Load (17.4ms)[0m  SELECT "teachers".* FROM "teachers"
+  Rendered teachers/_teacher.html.haml (11.7ms)
+  Rendered teachers/index.html.haml within layouts/application (52.2ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 750ms (Views: 727.0ms | ActiveRecord: 20.2ms)
+
+
+Started GET "/report/subjects" for 127.0.0.1 at 2015-12-03 13:17:45 +0100
+Processing by ReportsController#subjects as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubjectItem Load (0.4ms)[0m  SELECT "subject_items".* FROM "subject_items"
+  Rendered reports/subjects.html.haml within layouts/application (1.6ms)
+  Rendered layouts/_navigation.html.haml (1.4ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 697ms (Views: 693.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-03 13:17:46 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (0.9ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mStudent Load (1.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mStudent Load (0.5ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered payments/_payment.html.haml (23.1ms)
+  Rendered payments/index.html.haml within layouts/application (29.6ms)
+  Rendered layouts/_navigation.html.haml (1.3ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 781ms (Views: 772.4ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-03 13:17:48 +0100
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.8ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/_student.haml (7.3ms)
+  Rendered students/index.html.haml within layouts/application (16.2ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 739ms (Views: 733.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-03 13:18:24 +0100
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.4ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/_student.haml (10.6ms)
+  Rendered students/index.html.haml within layouts/application (16.5ms)
+  Rendered layouts/_navigation.html.haml (6.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 891ms (Views: 888.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 13:18:30 +0100
+Processing by VisitorsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered visitors/index.html.haml within layouts/application (0.3ms)
+  Rendered layouts/_navigation.html.haml (5.6ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 709ms (Views: 704.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-03 13:18:31 +0100
+Processing by PaymentsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPayment Load (0.7ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mStudent Load (0.6ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mStudent Load (1.4ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered payments/_payment.html.haml (30.8ms)
+  Rendered payments/index.html.haml within layouts/application (39.5ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 748ms (Views: 740.7ms | ActiveRecord: 3.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mUser Exists (2.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@admin.com' LIMIT 1[0m
+  [1m[35mSQL (12.6ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["email", "admin@admin.com"], ["encrypted_password", "$2a$10$avJwoJdvD5YVYpUqufi5pOFyDi.DF54qu0dw/P5tNr6ISW59YqUvC"], ["created_at", "2015-12-03 12:34:02.535084"], ["updated_at", "2015-12-03 12:34:02.535084"]]
+  [1m[36m (15.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (22.1ms)[0m  [1mINSERT INTO "teachers" ("first_name", "last_name", "academic_title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Seamus"], ["last_name", "Smith"], ["academic_title", "Prof."], ["created_at", "2015-12-03 12:34:02.968913"], ["updated_at", "2015-12-03 12:34:02.968913"]]
+  [1m[35m (27.9ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "teachers" ("first_name", "last_name", "academic_title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Cletus"], ["last_name", "Gutkowski"], ["academic_title", "Prof."], ["created_at", "2015-12-03 12:34:03.023719"], ["updated_at", "2015-12-03 12:34:03.023719"]]
+  [1m[36m (6.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "teachers" ("first_name", "last_name", "academic_title", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Juvenal"], ["last_name", "Hoppe"], ["academic_title", "Prof."], ["created_at", "2015-12-03 12:34:03.056405"], ["updated_at", "2015-12-03 12:34:03.056405"]]
+  [1m[35m (6.1ms)[0m  COMMIT
+  [1m[36mTeacher Load (0.7ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mSQL (18.0ms)[0m  [1mINSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Et ratione est et debitis natus reprehenderit."], ["teacher_id", 5], ["created_at", "2015-12-03 12:34:03.103194"], ["updated_at", "2015-12-03 12:34:03.103194"]]
+  [1m[35m (19.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Ab sequi corporis pariatur dicta."], ["teacher_id", 5], ["created_at", "2015-12-03 12:34:03.144869"], ["updated_at", "2015-12-03 12:34:03.144869"]]
+  [1m[36m (7.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Rerum mollitia officia sapiente sequi repudiandae."], ["teacher_id", 3], ["created_at", "2015-12-03 12:34:03.155870"], ["updated_at", "2015-12-03 12:34:03.155870"]]
+  [1m[35m (7.8ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["title", "Praesentium placeat alias sunt id autem."], ["teacher_id", 5], ["created_at", "2015-12-03 12:34:03.166888"], ["updated_at", "2015-12-03 12:34:03.166888"]]
+  [1m[36m (7.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "subject_items" ("title", "teacher_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Soluta perferendis ab voluptatem."], ["teacher_id", 4], ["created_at", "2015-12-03 12:34:03.178014"], ["updated_at", "2015-12-03 12:34:03.178014"]]
+  [1m[35m (7.9ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (28.1ms)[0m  INSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Nichole"], ["last_name", "Raynor"], ["birthdate", "2014-09-13"], ["created_at", "2015-12-03 12:34:03.201732"], ["updated_at", "2015-12-03 12:34:03.201732"]]
+  [1m[36m (10.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Orrin"], ["last_name", "Streich"], ["birthdate", "2013-06-20"], ["created_at", "2015-12-03 12:34:03.246063"], ["updated_at", "2015-12-03 12:34:03.246063"]]
+  [1m[35m (5.1ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Rollin"], ["last_name", "Walsh"], ["birthdate", "2014-05-28"], ["created_at", "2015-12-03 12:34:03.256934"], ["updated_at", "2015-12-03 12:34:03.256934"]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Carmel"], ["last_name", "Wehner"], ["birthdate", "2013-04-17"], ["created_at", "2015-12-03 12:34:03.267943"], ["updated_at", "2015-12-03 12:34:03.267943"]]
+  [1m[35m (5.7ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Astrid"], ["last_name", "Heaney"], ["birthdate", "2015-06-18"], ["created_at", "2015-12-03 12:34:03.279242"], ["updated_at", "2015-12-03 12:34:03.279242"]]
+  [1m[36m (5.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Gerald"], ["last_name", "Kiehn"], ["birthdate", "2014-05-13"], ["created_at", "2015-12-03 12:34:03.290324"], ["updated_at", "2015-12-03 12:34:03.290324"]]
+  [1m[35m (5.2ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Sigrid"], ["last_name", "Hermiston"], ["birthdate", "2015-09-26"], ["created_at", "2015-12-03 12:34:03.301343"], ["updated_at", "2015-12-03 12:34:03.301343"]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Watson"], ["last_name", "Ratke"], ["birthdate", "2013-08-20"], ["created_at", "2015-12-03 12:34:03.312281"], ["updated_at", "2015-12-03 12:34:03.312281"]]
+  [1m[35m (5.5ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Jaunita"], ["last_name", "Schaefer"], ["birthdate", "2015-10-05"], ["created_at", "2015-12-03 12:34:03.323259"], ["updated_at", "2015-12-03 12:34:03.323259"]]
+  [1m[36m (6.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Filiberto"], ["last_name", "Ebert"], ["birthdate", "2014-04-15"], ["created_at", "2015-12-03 12:34:03.334455"], ["updated_at", "2015-12-03 12:34:03.334455"]]
+  [1m[35m (6.0ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Chad"], ["last_name", "Lemke"], ["birthdate", "2015-09-11"], ["created_at", "2015-12-03 12:34:03.345517"], ["updated_at", "2015-12-03 12:34:03.345517"]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Barry"], ["last_name", "Christiansen"], ["birthdate", "2014-08-09"], ["created_at", "2015-12-03 12:34:03.356716"], ["updated_at", "2015-12-03 12:34:03.356716"]]
+  [1m[35m (5.9ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Zola"], ["last_name", "Ferry"], ["birthdate", "2013-06-20"], ["created_at", "2015-12-03 12:34:03.368262"], ["updated_at", "2015-12-03 12:34:03.368262"]]
+  [1m[36m (5.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Brett"], ["last_name", "Gottlieb"], ["birthdate", "2014-12-09"], ["created_at", "2015-12-03 12:34:03.378673"], ["updated_at", "2015-12-03 12:34:03.378673"]]
+  [1m[35m (6.3ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Edmond"], ["last_name", "Padberg"], ["birthdate", "2014-08-14"], ["created_at", "2015-12-03 12:34:03.389850"], ["updated_at", "2015-12-03 12:34:03.389850"]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Karlee"], ["last_name", "Schaden"], ["birthdate", "2014-11-25"], ["created_at", "2015-12-03 12:34:03.401013"], ["updated_at", "2015-12-03 12:34:03.401013"]]
+  [1m[35m (6.5ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Vinnie"], ["last_name", "Lakin"], ["birthdate", "2015-03-27"], ["created_at", "2015-12-03 12:34:03.412029"], ["updated_at", "2015-12-03 12:34:03.412029"]]
+  [1m[36m (6.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Nedra"], ["last_name", "Bergnaum"], ["birthdate", "2014-03-13"], ["created_at", "2015-12-03 12:34:03.423134"], ["updated_at", "2015-12-03 12:34:03.423134"]]
+  [1m[35m (6.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["first_name", "Christophe"], ["last_name", "Erdman"], ["birthdate", "2014-01-08"], ["created_at", "2015-12-03 12:34:03.434177"], ["updated_at", "2015-12-03 12:34:03.434177"]]
+  [1m[36m (6.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["first_name", "Miracle"], ["last_name", "Hettinger"], ["birthdate", "2015-08-26"], ["created_at", "2015-12-03 12:34:03.445289"], ["updated_at", "2015-12-03 12:34:03.445289"]]
+  [1m[35m (6.8ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Burley"], ["last_name", "Mohr"], ["created_at", "2015-12-03 12:34:03.456077"], ["updated_at", "2015-12-03 12:34:03.456077"]]
+  [1m[36m (6.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Allan"], ["last_name", "Zulauf"], ["created_at", "2015-12-03 12:34:03.467413"], ["updated_at", "2015-12-03 12:34:03.467413"]]
+  [1m[35m (6.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Alvina"], ["last_name", "Hammes"], ["created_at", "2015-12-03 12:34:03.478433"], ["updated_at", "2015-12-03 12:34:03.478433"]]
+  [1m[36m (6.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["first_name", "Koby"], ["last_name", "Kuhn"], ["created_at", "2015-12-03 12:34:03.489496"], ["updated_at", "2015-12-03 12:34:03.489496"]]
+  [1m[35m (6.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "Lemuel"], ["last_name", "McClure"], ["created_at", "2015-12-03 12:34:03.500738"], ["updated_at", "2015-12-03 12:34:03.500738"]]
+  [1m[36m (6.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSubjectItem Load (1.0ms)[0m  SELECT "subject_items".* FROM "subject_items"
+  [1m[36mStudent Load (1.3ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mParticipation Exists (37.2ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 12 AND "participations"."subject_item_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (17.2ms)[0m  INSERT INTO "participations" ("subject_item_id", "student_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["subject_item_id", 1], ["student_id", 12], ["created_at", "2015-12-03 12:34:03.596768"], ["updated_at", "2015-12-03 12:34:03.596768"]]
+  [1m[36m (15.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mParticipation Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 18 AND "participations"."subject_item_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "participations" ("subject_item_id", "student_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["subject_item_id", 2], ["student_id", 18], ["created_at", "2015-12-03 12:34:03.640878"], ["updated_at", "2015-12-03 12:34:03.640878"]]
+  [1m[36mParticipation Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 10 AND "participations"."subject_item_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "participations" ("subject_item_id", "student_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["subject_item_id", 2], ["student_id", 10], ["created_at", "2015-12-03 12:34:03.650324"], ["updated_at", "2015-12-03 12:34:03.650324"]]
+  [1m[36mParticipation Exists (0.9ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 23 AND "participations"."subject_item_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "participations" ("subject_item_id", "student_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["subject_item_id", 2], ["student_id", 23], ["created_at", "2015-12-03 12:34:03.658669"], ["updated_at", "2015-12-03 12:34:03.658669"]]
+  [1m[36m (4.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mParticipation Exists (1.4ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 7 AND "participations"."subject_item_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "participations" ("subject_item_id", "student_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["subject_item_id", 3], ["student_id", 7], ["created_at", "2015-12-03 12:34:03.673569"], ["updated_at", "2015-12-03 12:34:03.673569"]]
+  [1m[36mParticipation Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 6 AND "participations"."subject_item_id" = 3) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "participations" ("subject_item_id", "student_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["subject_item_id", 3], ["student_id", 6], ["created_at", "2015-12-03 12:34:03.680603"], ["updated_at", "2015-12-03 12:34:03.680603"]]
+  [1m[36m (4.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mParticipation Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 14 AND "participations"."subject_item_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "participations" ("subject_item_id", "student_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["subject_item_id", 4], ["student_id", 14], ["created_at", "2015-12-03 12:34:03.694932"], ["updated_at", "2015-12-03 12:34:03.694932"]]
+  [1m[36mParticipation Exists (1.3ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 28 AND "participations"."subject_item_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "participations" ("subject_item_id", "student_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["subject_item_id", 4], ["student_id", 28], ["created_at", "2015-12-03 12:34:03.704908"], ["updated_at", "2015-12-03 12:34:03.704908"]]
+  [1m[36mParticipation Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 21 AND "participations"."subject_item_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "participations" ("subject_item_id", "student_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["subject_item_id", 4], ["student_id", 21], ["created_at", "2015-12-03 12:34:03.711491"], ["updated_at", "2015-12-03 12:34:03.711491"]]
+  [1m[36mParticipation Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 23 AND "participations"."subject_item_id" = 4) LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "participations" ("subject_item_id", "student_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["subject_item_id", 4], ["student_id", 23], ["created_at", "2015-12-03 12:34:03.718483"], ["updated_at", "2015-12-03 12:34:03.718483"]]
+  [1m[36m (11.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mParticipation Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 27 AND "participations"."subject_item_id" = 5) LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "participations" ("subject_item_id", "student_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["subject_item_id", 5], ["student_id", 27], ["created_at", "2015-12-03 12:34:03.738391"], ["updated_at", "2015-12-03 12:34:03.738391"]]
+  [1m[36mParticipation Exists (1.1ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 19 AND "participations"."subject_item_id" = 5) LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "participations" ("subject_item_id", "student_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["subject_item_id", 5], ["student_id", 19], ["created_at", "2015-12-03 12:34:03.745101"], ["updated_at", "2015-12-03 12:34:03.745101"]]
+  [1m[36m (6.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mSubjectItem Load (0.9ms)[0m  SELECT "subject_items".* FROM "subject_items"
+  [1m[36mStudent Load (1.3ms)[0m  [1mSELECT "students".* FROM "students" INNER JOIN "participations" ON "students"."id" = "participations"."student_id" WHERE "participations"."subject_item_id" = $1[0m  [["subject_item_id", 1]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (18.1ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 12], ["subject_item_id", 1], ["value", 3], ["created_at", "2015-12-03 12:34:03.788296"], ["updated_at", "2015-12-03 12:34:03.788296"]]
+  [1m[35m (12.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 12], ["subject_item_id", 1], ["value", 5], ["created_at", "2015-12-03 12:34:03.825302"], ["updated_at", "2015-12-03 12:34:03.825302"]]
+  [1m[36m (4.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 12], ["subject_item_id", 1], ["value", 4], ["created_at", "2015-12-03 12:34:03.835901"], ["updated_at", "2015-12-03 12:34:03.835901"]]
+  [1m[35m (5.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 12], ["subject_item_id", 1], ["value", 2], ["created_at", "2015-12-03 12:34:03.846702"], ["updated_at", "2015-12-03 12:34:03.846702"]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mStudent Load (0.8ms)[0m  SELECT "students".* FROM "students" INNER JOIN "participations" ON "students"."id" = "participations"."student_id" WHERE "participations"."subject_item_id" = $1  [["subject_item_id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 10], ["subject_item_id", 2], ["value", 4], ["created_at", "2015-12-03 12:34:03.860633"], ["updated_at", "2015-12-03 12:34:03.860633"]]
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 10], ["subject_item_id", 2], ["value", 3], ["created_at", "2015-12-03 12:34:03.868340"], ["updated_at", "2015-12-03 12:34:03.868340"]]
+  [1m[35m (6.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 10], ["subject_item_id", 2], ["value", 5], ["created_at", "2015-12-03 12:34:03.879863"], ["updated_at", "2015-12-03 12:34:03.879863"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 10], ["subject_item_id", 2], ["value", 6], ["created_at", "2015-12-03 12:34:03.890957"], ["updated_at", "2015-12-03 12:34:03.890957"]]
+  [1m[35m (6.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 18], ["subject_item_id", 2], ["value", 2], ["created_at", "2015-12-03 12:34:03.902077"], ["updated_at", "2015-12-03 12:34:03.902077"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 18], ["subject_item_id", 2], ["value", 5], ["created_at", "2015-12-03 12:34:03.913303"], ["updated_at", "2015-12-03 12:34:03.913303"]]
+  [1m[35m (5.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 18], ["subject_item_id", 2], ["value", 2], ["created_at", "2015-12-03 12:34:03.924145"], ["updated_at", "2015-12-03 12:34:03.924145"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 18], ["subject_item_id", 2], ["value", 1], ["created_at", "2015-12-03 12:34:03.935126"], ["updated_at", "2015-12-03 12:34:03.935126"]]
+  [1m[35m (6.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 23], ["subject_item_id", 2], ["value", 4], ["created_at", "2015-12-03 12:34:03.946769"], ["updated_at", "2015-12-03 12:34:03.946769"]]
+  [1m[36m (5.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 23], ["subject_item_id", 2], ["value", 1], ["created_at", "2015-12-03 12:34:03.957384"], ["updated_at", "2015-12-03 12:34:03.957384"]]
+  [1m[35m (6.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36mStudent Load (0.6ms)[0m  [1mSELECT "students".* FROM "students" INNER JOIN "participations" ON "students"."id" = "participations"."student_id" WHERE "participations"."subject_item_id" = $1[0m  [["subject_item_id", 3]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 6], ["subject_item_id", 3], ["value", 3], ["created_at", "2015-12-03 12:34:03.970787"], ["updated_at", "2015-12-03 12:34:03.970787"]]
+  [1m[35m (4.2ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 6], ["subject_item_id", 3], ["value", 6], ["created_at", "2015-12-03 12:34:03.982003"], ["updated_at", "2015-12-03 12:34:03.982003"]]
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 6], ["subject_item_id", 3], ["value", 1], ["created_at", "2015-12-03 12:34:03.993180"], ["updated_at", "2015-12-03 12:34:03.993180"]]
+  [1m[35m (2.8ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 6], ["subject_item_id", 3], ["value", 2], ["created_at", "2015-12-03 12:34:04.004231"], ["updated_at", "2015-12-03 12:34:04.004231"]]
+  [1m[36m (3.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 6], ["subject_item_id", 3], ["value", 2], ["created_at", "2015-12-03 12:34:04.014999"], ["updated_at", "2015-12-03 12:34:04.014999"]]
+  [1m[35m (3.3ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 7], ["subject_item_id", 3], ["value", 6], ["created_at", "2015-12-03 12:34:04.025477"], ["updated_at", "2015-12-03 12:34:04.025477"]]
+  [1m[36m (4.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 7], ["subject_item_id", 3], ["value", 4], ["created_at", "2015-12-03 12:34:04.036530"], ["updated_at", "2015-12-03 12:34:04.036530"]]
+  [1m[35m (4.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 7], ["subject_item_id", 3], ["value", 1], ["created_at", "2015-12-03 12:34:04.047667"], ["updated_at", "2015-12-03 12:34:04.047667"]]
+  [1m[36m (4.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 7], ["subject_item_id", 3], ["value", 3], ["created_at", "2015-12-03 12:34:04.058266"], ["updated_at", "2015-12-03 12:34:04.058266"]]
+  [1m[35m (5.3ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 7], ["subject_item_id", 3], ["value", 1], ["created_at", "2015-12-03 12:34:04.069808"], ["updated_at", "2015-12-03 12:34:04.069808"]]
+  [1m[36m (4.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStudent Load (0.9ms)[0m  SELECT "students".* FROM "students" INNER JOIN "participations" ON "students"."id" = "participations"."student_id" WHERE "participations"."subject_item_id" = $1  [["subject_item_id", 4]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 14], ["subject_item_id", 4], ["value", 5], ["created_at", "2015-12-03 12:34:04.084464"], ["updated_at", "2015-12-03 12:34:04.084464"]]
+  [1m[36m (12.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 14], ["subject_item_id", 4], ["value", 5], ["created_at", "2015-12-03 12:34:04.103756"], ["updated_at", "2015-12-03 12:34:04.103756"]]
+  [1m[35m (59.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 21], ["subject_item_id", 4], ["value", 4], ["created_at", "2015-12-03 12:34:04.170706"], ["updated_at", "2015-12-03 12:34:04.170706"]]
+  [1m[36m (69.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 21], ["subject_item_id", 4], ["value", 2], ["created_at", "2015-12-03 12:34:04.249363"], ["updated_at", "2015-12-03 12:34:04.249363"]]
+  [1m[35m (38.0ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 21], ["subject_item_id", 4], ["value", 2], ["created_at", "2015-12-03 12:34:04.296482"], ["updated_at", "2015-12-03 12:34:04.296482"]]
+  [1m[36m (32.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 21], ["subject_item_id", 4], ["value", 1], ["created_at", "2015-12-03 12:34:04.338482"], ["updated_at", "2015-12-03 12:34:04.338482"]]
+  [1m[35m (49.0ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 21], ["subject_item_id", 4], ["value", 6], ["created_at", "2015-12-03 12:34:04.397234"], ["updated_at", "2015-12-03 12:34:04.397234"]]
+  [1m[36m (20.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 23], ["subject_item_id", 4], ["value", 2], ["created_at", "2015-12-03 12:34:04.427536"], ["updated_at", "2015-12-03 12:34:04.427536"]]
+  [1m[35m (12.9ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 23], ["subject_item_id", 4], ["value", 5], ["created_at", "2015-12-03 12:34:04.449457"], ["updated_at", "2015-12-03 12:34:04.449457"]]
+  [1m[36m (13.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 28], ["subject_item_id", 4], ["value", 6], ["created_at", "2015-12-03 12:34:04.471084"], ["updated_at", "2015-12-03 12:34:04.471084"]]
+  [1m[35m (3.0ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 28], ["subject_item_id", 4], ["value", 1], ["created_at", "2015-12-03 12:34:04.481591"], ["updated_at", "2015-12-03 12:34:04.481591"]]
+  [1m[36m (4.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mStudent Load (1.3ms)[0m  SELECT "students".* FROM "students" INNER JOIN "participations" ON "students"."id" = "participations"."student_id" WHERE "participations"."subject_item_id" = $1  [["subject_item_id", 5]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 19], ["subject_item_id", 5], ["value", 6], ["created_at", "2015-12-03 12:34:04.497208"], ["updated_at", "2015-12-03 12:34:04.497208"]]
+  [1m[36m (10.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 19], ["subject_item_id", 5], ["value", 4], ["created_at", "2015-12-03 12:34:04.515039"], ["updated_at", "2015-12-03 12:34:04.515039"]]
+  [1m[35m (3.8ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 19], ["subject_item_id", 5], ["value", 4], ["created_at", "2015-12-03 12:34:04.526102"], ["updated_at", "2015-12-03 12:34:04.526102"]]
+  [1m[36m (3.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["student_id", 27], ["subject_item_id", 5], ["value", 3], ["created_at", "2015-12-03 12:34:04.537335"], ["updated_at", "2015-12-03 12:34:04.537335"]]
+  [1m[35m (3.8ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "subject_item_notes" ("student_id", "subject_item_id", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["student_id", 27], ["subject_item_id", 5], ["value", 1], ["created_at", "2015-12-03 12:34:04.548384"], ["updated_at", "2015-12-03 12:34:04.548384"]]
+  [1m[36m (3.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-03 13:34:10 +0100
+Processing by PaymentsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPayment Load (0.6ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mStudent Load (0.4ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered payments/_payment.html.haml (33.5ms)
+  Rendered payments/index.html.haml within layouts/application (44.7ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 884ms (Views: 877.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-03 13:34:15 +0100
+Processing by StudentsController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (1.7ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered students/_student.haml (46.7ms)
+  Rendered students/index.html.haml within layouts/application (55.2ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 769ms (Views: 763.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-12-03 13:34:25 +0100
+Processing by TeachersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTeacher Load (0.6ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/_teacher.html.haml (8.3ms)
+  Rendered teachers/index.html.haml within layouts/application (13.7ms)
+  Rendered layouts/_navigation.html.haml (1.3ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 736ms (Views: 732.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/report/subjects" for 127.0.0.1 at 2015-12-03 13:34:28 +0100
+Processing by ReportsController#subjects as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSubjectItem Load (1.2ms)[0m  [1mSELECT "subject_items".* FROM "subject_items"[0m
+  [1m[35mTeacher Load (1.7ms)[0m  SELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IN (5, 3, 4)
+  [1m[36mParticipation Load (1.2ms)[0m  [1mSELECT "participations".* FROM "participations" WHERE "participations"."subject_item_id" IN (1, 2, 3, 4, 5)[0m
+  [1m[35mStudent Load (1.2ms)[0m  SELECT "students".* FROM "students" WHERE "students"."id" IN (12, 18, 10, 23, 7, 6, 14, 28, 21, 27, 19)
+  [1m[36m (1.2ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 1[0m  [["student_id", 12]]
+  Rendered reports/_subject_item.html.haml (24.1ms)
+  [1m[35m (0.7ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 2  [["student_id", 10]]
+  [1m[36m (0.7ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 2[0m  [["student_id", 18]]
+  [1m[35m (0.6ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 2  [["student_id", 23]]
+  Rendered reports/_subject_item.html.haml (6.8ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3[0m  [["student_id", 6]]
+  [1m[35m (0.5ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 7]]
+  Rendered reports/_subject_item.html.haml (4.4ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 14]]
+  [1m[35m (0.5ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4  [["student_id", 21]]
+  [1m[36m (1.3ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 23]]
+  [1m[35m (0.6ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4  [["student_id", 28]]
+  Rendered reports/_subject_item.html.haml (11.1ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 5[0m  [["student_id", 19]]
+  [1m[35m (0.5ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 5  [["student_id", 27]]
+  Rendered reports/_subject_item.html.haml (4.5ms)
+  Rendered reports/subjects.html.haml within layouts/application (119.4ms)
+  Rendered layouts/_navigation.html.haml (1.3ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 850ms (Views: 827.2ms | ActiveRecord: 20.4ms)
