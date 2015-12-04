@@ -39,6 +39,7 @@ en:
       student: Student
       date: Date
       sum: Sum
+      month_fee: Tuition for
   simple_form:
     labels:
       student:
