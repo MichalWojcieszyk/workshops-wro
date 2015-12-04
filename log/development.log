@@ -27753,3 +27753,312 @@ Processing by PaymentsController#index as HTML
   Rendered layouts/_navigation.html.haml (1.3ms)
   Rendered layouts/_messages.html.haml (0.1ms)
 Completed 200 OK in 296ms (Views: 283.6ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-04 17:32:52 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+Completed 401 Unauthorized in 105ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-12-04 17:32:56 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/michal/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (6.7ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (639.6ms)
+  Rendered layouts/_navigation.html.haml (102.1ms)
+  Rendered layouts/_messages.html.haml (31.3ms)
+Completed 200 OK in 4739ms (Views: 4563.9ms | ActiveRecord: 50.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-12-04 17:33:06 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0IUNF75HnaAHtpZoAZH8ZyiQGcR2T/RO3E1mML2kZOiAr+F4gBP5euuN/ea//7fQEBuf8bBcfQ1jqBEJRmEX+w==", "user"=>{"email"=>"adam@adam.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (44.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "adam@adam.com"]]
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2015-12-04 12:09:24.042753"], ["current_sign_in_at", "2015-12-04 16:33:07.643519"], ["sign_in_count", 11], ["updated_at", "2015-12-04 16:33:07.648863"], ["id", 1]]
+  [1m[36m (16.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1235ms (ActiveRecord: 63.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-04 17:33:07 +0100
+Processing by VisitorsController#index as HTML
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered visitors/index.html.haml within layouts/application (5.7ms)
+  Rendered layouts/_navigation.html.haml (5.7ms)
+  Rendered layouts/_messages.html.haml (0.9ms)
+Completed 200 OK in 1499ms (Views: 1488.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-04 17:33:13 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (1.7ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mStudent Load (1.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (1.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (1.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mStudent Load (1.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 10]]
+  Rendered payments/_payment.html.haml (435.2ms)
+  Rendered payments/index.html.haml within layouts/application (614.1ms)
+  Rendered layouts/_navigation.html.haml (44.3ms)
+  Rendered layouts/_messages.html.haml (4.8ms)
+Completed 200 OK in 2025ms (Views: 2005.0ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/payments/new" for 127.0.0.1 at 2015-12-04 17:33:17 +0100
+Processing by PaymentsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (1.9ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."last_name" ASC
+  Rendered payments/_form.html.haml (105.3ms)
+  Rendered payments/new.html.haml within layouts/application (123.7ms)
+  Rendered layouts/_navigation.html.haml (3.4ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 1575ms (Views: 1566.7ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/payments" for 127.0.0.1 at 2015-12-04 17:33:22 +0100
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a56HEm6fxAQ1WRW+yNnZu+4vPjx3frSkSJAxfv4eAtUds7HV+mTHt/f/1yUC2j5SwyYnFRmrQV3Zj08p4THJ+w==", "payment"=>{"sum"=>"100", "date(3i)"=>"4", "date(2i)"=>"12", "date(1i)"=>"2015", "month_fee(3i)"=>"1", "month_fee(2i)"=>"12", "month_fee(1i)"=>"2015", "student_id"=>"22"}, "commit"=>"Create Payment"}
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mStudent Load (2.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  [1m[35mSQL (3.5ms)[0m  INSERT INTO "payments" ("sum", "student_id", "date", "month_fee", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["sum", "100.0"], ["student_id", 22], ["date", "2015-12-04"], ["month_fee", "2015-12-01 00:00:00.000000"], ["created_at", "2015-12-04 16:33:22.619621"], ["updated_at", "2015-12-04 16:33:22.619621"]]
+  [1m[36m (239.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/payments/15
+Completed 302 Found in 335ms (ActiveRecord: 247.1ms)
+
+
+Started GET "/payments/15" for 127.0.0.1 at 2015-12-04 17:33:22 +0100
+Processing by PaymentsController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mUser Load (2.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPayment Load (1.9ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mStudent Load (1.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 22]]
+  Rendered payments/show.html.haml within layouts/application (77.5ms)
+  Rendered layouts/_navigation.html.haml (29.2ms)
+  Rendered layouts/_messages.html.haml (0.7ms)
+Completed 200 OK in 1498ms (Views: 1484.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-04 17:47:14 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (79.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VisitorsController#index as HTML
+Completed 401 Unauthorized in 35ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-04 17:47:15 +0100
+Processing by VisitorsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-12-04 17:47:15 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered /home/michal/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/devise-3.5.2/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (70.0ms)
+  Rendered layouts/_navigation.html.haml (16.3ms)
+  Rendered layouts/_messages.html.haml (8.2ms)
+Completed 200 OK in 1698ms (Views: 1457.1ms | ActiveRecord: 209.1ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-12-04 17:47:19 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fivekBX1HN5bmC3/ns0XlSMxhgAczcXrC9govteKhqgHo3V6RBIj7AlyjAAzl+h9+yDDijw4npGiV5HlQNFWRw==", "user"=>{"email"=>"adam@adam.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (81.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["email", "adam@adam.com"]]
+  [1m[36m (0.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "users" SET "last_sign_in_at" = $1, "current_sign_in_at" = $2, "sign_in_count" = $3, "updated_at" = $4 WHERE "users"."id" = $5  [["last_sign_in_at", "2015-12-04 16:33:07.643519"], ["current_sign_in_at", "2015-12-04 16:47:19.809367"], ["sign_in_count", 12], ["updated_at", "2015-12-04 16:47:19.814371"], ["id", 1]]
+  [1m[36m (21.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 280ms (ActiveRecord: 105.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-04 17:47:19 +0100
+Processing by VisitorsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered visitors/index.html.haml within layouts/application (5.2ms)
+  Rendered layouts/_navigation.html.haml (1.3ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 257ms (Views: 252.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-04 17:47:21 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (95.3ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mStudent Load (25.8ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.5ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.5ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mStudent Load (0.6ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36mStudent Load (1.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  Rendered payments/_payment.html.haml (193.6ms)
+  Rendered payments/index.html.haml within layouts/application (345.1ms)
+  Rendered layouts/_navigation.html.haml (6.1ms)
+  Rendered layouts/_messages.html.haml (1.6ms)
+Completed 200 OK in 581ms (Views: 435.2ms | ActiveRecord: 142.9ms)
+
+
+Started GET "/payments/new" for 127.0.0.1 at 2015-12-04 17:47:22 +0100
+Processing by PaymentsController#new as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (1.8ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."last_name" ASC[0m
+  Rendered payments/_form.html.haml (37.6ms)
+  Rendered payments/new.html.haml within layouts/application (47.0ms)
+  Rendered layouts/_navigation.html.haml (1.5ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 274ms (Views: 267.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/payments" for 127.0.0.1 at 2015-12-04 17:47:26 +0100
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wgNDN4mu3BzRzG3tv6SSRtYt+Amo/yvOlROMPravvGNDPyxTe9tot78lFSgQBD2cX3m5QXr2AJePEwZLs5sVrg==", "payment"=>{"sum"=>"100", "date(3i)"=>"4", "date(2i)"=>"12", "date(1i)"=>"2015", "month_fee(3i)"=>"1", "month_fee(2i)"=>"12", "month_fee(1i)"=>"2015", "student_id"=>"27"}, "commit"=>"Create Payment"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mStudent Load (0.5ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 27]]
+  [1m[36mSQL (16.9ms)[0m  [1mINSERT INTO "payments" ("sum", "student_id", "date", "month_fee", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["sum", "100.0"], ["student_id", 27], ["date", "2015-12-04"], ["month_fee", "2015-12-01 00:00:00.000000"], ["created_at", "2015-12-04 16:47:26.992471"], ["updated_at", "2015-12-04 16:47:26.992471"]]
+  [1m[35m (16.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/payments/16
+Completed 302 Found in 52ms (ActiveRecord: 35.0ms)
+
+
+Started GET "/payments/16" for 127.0.0.1 at 2015-12-04 17:47:27 +0100
+Processing by PaymentsController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (0.4ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = $1 LIMIT 1  [["id", 16]]
+  [1m[36mStudent Load (1.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 27]]
+  Rendered payments/show.html.haml within layouts/application (16.3ms)
+  Rendered layouts/_navigation.html.haml (1.3ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 281ms (Views: 277.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-04 17:47:32 +0100
+Processing by StudentsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (0.9ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered students/_student.haml (54.1ms)
+  Rendered students/index.html.haml within layouts/application (64.9ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 269ms (Views: 263.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2015-12-04 17:47:33 +0100
+Processing by StudentsController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSubjectItem Load (47.2ms)[0m  [1mSELECT "subject_items".* FROM "subject_items"  ORDER BY "subject_items"."title" ASC[0m
+  Rendered students/_form.html.haml (181.3ms)
+  Rendered students/new.html.haml within layouts/application (196.8ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 461ms (Views: 389.4ms | ActiveRecord: 67.6ms)
+
+
+Started POST "/students" for 127.0.0.1 at 2015-12-04 17:47:40 +0100
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"h//qwN2vw8bitfxSHIbmYDe46m7DaV/KdW+X2SGZS+kGw4WkL9p3bYxchJezJkm6vuyrJhFgdJNvbx2sJK3iJA==", "student"=>{"first_name"=>"as", "last_name"=>"dsd", "birthdate(3i)"=>"", "birthdate(2i)"=>"", "birthdate(1i)"=>"", "subject_item_ids"=>["1", ""]}, "commit"=>"Create Student"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mSubjectItem Load (1.8ms)[0m  [1mSELECT  "subject_items".* FROM "subject_items" WHERE "subject_items"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36mParticipation Exists (49.4ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" IS NULL AND "participations"."subject_item_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (15.7ms)[0m  INSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["first_name", "as"], ["last_name", "dsd"], ["created_at", "2015-12-04 16:47:40.259852"], ["updated_at", "2015-12-04 16:47:40.259852"]]
+  [1m[36mParticipation Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 29 AND "participations"."subject_item_id" = 1) LIMIT 1[0m
+  [1m[35mSQL (13.8ms)[0m  INSERT INTO "participations" ("subject_item_id", "student_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["subject_item_id", 1], ["student_id", 29], ["created_at", "2015-12-04 16:47:40.278956"], ["updated_at", "2015-12-04 16:47:40.278956"]]
+  [1m[36mParticipation Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "participations" WHERE ("participations"."student_id" = 29 AND "participations"."id" != 13 AND "participations"."subject_item_id" = 1) LIMIT 1[0m
+  [1m[35m (19.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/students/29
+Completed 302 Found in 153ms (ActiveRecord: 104.2ms)
+
+
+Started GET "/students/29" for 127.0.0.1 at 2015-12-04 17:47:40 +0100
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.3ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 29]]
+  Rendered students/show.html.haml within layouts/application (6.4ms)
+  Rendered layouts/_navigation.html.haml (1.3ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 263ms (Views: 260.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-04 17:47:43 +0100
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.8ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/_student.haml (46.4ms)
+  Rendered students/index.html.haml within layouts/application (54.5ms)
+  Rendered layouts/_navigation.html.haml (1.1ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 249ms (Views: 244.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-04 17:47:50 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (0.8ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mStudent Load (0.5ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.7ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.8ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mStudent Load (0.6ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36mStudent Load (0.6ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  [1m[35mStudent Load (0.5ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 27]]
+  Rendered payments/_payment.html.haml (37.5ms)
+  Rendered payments/index.html.haml within layouts/application (46.8ms)
+  Rendered layouts/_navigation.html.haml (1.5ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 309ms (Views: 301.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/report/subjects" for 127.0.0.1 at 2015-12-04 17:47:52 +0100
+Processing by ReportsController#subjects as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mSubjectItem Load (0.7ms)[0m  SELECT "subject_items".* FROM "subject_items"
+  [1m[36mTeacher Load (21.3ms)[0m  [1mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IN (5, 3, 4)[0m
+  [1m[35mParticipation Load (1.1ms)[0m  SELECT "participations".* FROM "participations" WHERE "participations"."subject_item_id" IN (1, 2, 3, 4, 5)
+  [1m[36mStudent Load (0.7ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."id" IN (12, 29, 18, 10, 23, 7, 6, 14, 28, 21, 27, 19)[0m
+  [1m[35m (28.9ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 1  [["student_id", 12]]
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 1[0m  [["student_id", 29]]
+  Rendered reports/_subject_item.html.haml (84.9ms)
+  [1m[35m (0.5ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 2  [["student_id", 10]]
+  [1m[36m (0.5ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 2[0m  [["student_id", 18]]
+  [1m[35m (0.4ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 2  [["student_id", 23]]
+  Rendered reports/_subject_item.html.haml (6.1ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3[0m  [["student_id", 6]]
+  [1m[35m (0.5ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3  [["student_id", 7]]
+  Rendered reports/_subject_item.html.haml (5.0ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 14]]
+  [1m[35m (0.4ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4  [["student_id", 21]]
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 23]]
+  [1m[35m (0.4ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4  [["student_id", 28]]
+  Rendered reports/_subject_item.html.haml (9.7ms)
+  [1m[36m (0.4ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 5[0m  [["student_id", 19]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 5  [["student_id", 27]]
+  Rendered reports/_subject_item.html.haml (5.2ms)
+  Rendered reports/subjects.html.haml within layouts/application (227.2ms)
+  Rendered layouts/_navigation.html.haml (1.2ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 443ms (Views: 377.3ms | ActiveRecord: 62.3ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-04 17:47:54 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (0.8ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mStudent Load (0.5ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.4ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.4ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 21]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 21]]
+  [1m[35mStudent Load (0.4ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 10]]
+  [1m[36mStudent Load (0.4ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 22]]
+  [1m[35mStudent Load (0.4ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 27]]
+  Rendered payments/_payment.html.haml (30.3ms)
+  Rendered payments/index.html.haml within layouts/application (39.0ms)
+  Rendered layouts/_navigation.html.haml (1.4ms)
+  Rendered layouts/_messages.html.haml (0.1ms)
+Completed 200 OK in 267ms (Views: 259.1ms | ActiveRecord: 3.9ms)
