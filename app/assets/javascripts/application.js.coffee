@@ -11,9 +11,10 @@
 # about supported directives.
 #
 #= require jquery
+#= require jquery.turbolinks
 #= require jquery_ujs
-#= require turbolinks
 #= require bootstrap-sprockets
 #= require dataTables/jquery.dataTables
-#= require jquery-ui
+#= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+#= require turbolinks
 #= require_tree .

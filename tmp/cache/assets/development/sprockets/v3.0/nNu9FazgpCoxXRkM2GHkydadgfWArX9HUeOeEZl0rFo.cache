@@ -1,0 +1,16 @@
+I"ï(function() {
+  jQuery(function() {
+    return $(".payments").dataTable({
+      order: [3, "desc"]
+    }, {
+      columnDefs: [
+        {
+          'orderable': false,
+          'targets': 3
+        }
+      ]
+    });
+  });
+
+}).call(this);
+:ET

@@ -1,0 +1,10 @@
+I"‚(function() {
+  jQuery(function() {
+    $(".payments").dataTable;
+    return {
+      stateSave: true
+    };
+  });
+
+}).call(this);
+:ET

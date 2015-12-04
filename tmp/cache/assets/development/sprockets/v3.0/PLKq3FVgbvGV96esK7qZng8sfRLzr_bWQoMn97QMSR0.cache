@@ -1,0 +1,10 @@
+I"±(function() {
+  $(document).ready(function() {
+    return $(".payments").dataTable({
+      Responsive: dataTables.responsive,
+      jQueryUI: true
+    });
+  });
+
+}).call(this);
+:ET
