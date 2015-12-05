@@ -6,7 +6,7 @@
       %td= payment.student.decorate.full_name
     %tr
       %td= "#{t('payment.columns.sum')}:"
-      %td= sum_to_euro(payment.sum)
+      %td= payment.decorate.sum_to_euro
     %tr
       %td= "#{t('payment.columns.date')}:"
       %td= payment.date

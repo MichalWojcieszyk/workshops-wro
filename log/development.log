@@ -29032,3 +29032,1548 @@ Processing by ReportsController#subjects as HTML
   Rendered layouts/_navigation.html.haml (3.1ms)
   Rendered layouts/_messages.html.haml (0.2ms)
 Completed 200 OK in 1484ms (Views: 1455.3ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:41:21 +0100
+Processing by PaymentsController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPayment Load (1.2ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mStudent Load (0.7ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 11]]
+  Rendered payments/_payment.html.haml (10.3ms)
+  Rendered payments/index.html.haml within layouts/application (20.0ms)
+  Rendered layouts/_navigation.html.haml (3.3ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 606ms (Views: 599.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-12-05 12:43:05 +0100
+Processing by TeachersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mTeacher Load (1.5ms)[0m  SELECT "teachers".* FROM "teachers"
+  Rendered teachers/_teacher.html.haml (12.0ms)
+  Rendered teachers/index.html.haml within layouts/application (22.3ms)
+  Rendered layouts/_navigation.html.haml (3.1ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 6968ms (Views: 6961.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-05 12:43:12 +0100
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (1.3ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/_student.haml (77.3ms)
+  Rendered students/index.html.haml within layouts/application (87.3ms)
+  Rendered layouts/_navigation.html.haml (4.5ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 2604ms (Views: 2596.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:43:15 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (1.2ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mStudent Load (0.9ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  Rendered payments/_payment.html.haml (15.9ms)
+  Rendered payments/index.html.haml within layouts/application (29.2ms)
+  Rendered layouts/_navigation.html.haml (3.3ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 2470ms (Views: 2460.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-05 12:43:17 +0100
+Processing by StudentsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (1.1ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  Rendered students/_student.haml (94.7ms)
+  Rendered students/index.html.haml within layouts/application (103.3ms)
+  Rendered layouts/_navigation.html.haml (5.7ms)
+  Rendered layouts/_messages.html.haml (0.5ms)
+Completed 200 OK in 2429ms (Views: 2422.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-12-05 12:43:23 +0100
+Processing by TeachersController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTeacher Load (1.0ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/_teacher.html.haml (11.2ms)
+  Rendered teachers/index.html.haml within layouts/application (19.7ms)
+  Rendered layouts/_navigation.html.haml (3.0ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 1986ms (Views: 1979.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-12-05 12:43:25 +0100
+Processing by TeachersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mTeacher Load (0.9ms)[0m  [1mSELECT "teachers".* FROM "teachers"[0m
+  Rendered teachers/_teacher.html.haml (8.8ms)
+  Rendered teachers/index.html.haml within layouts/application (16.4ms)
+  Rendered layouts/_navigation.html.haml (4.1ms)
+  Rendered layouts/_messages.html.haml (0.4ms)
+Completed 200 OK in 2137ms (Views: 2131.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:43:29 +0100
+Processing by PaymentsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPayment Load (1.0ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mStudent Load (0.7ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 11]]
+  Rendered payments/_payment.html.haml (8.8ms)
+  Rendered payments/index.html.haml within layouts/application (18.8ms)
+  Rendered layouts/_navigation.html.haml (3.0ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 2002ms (Views: 1994.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/payments/new" for 127.0.0.1 at 2015-12-05 12:43:59 +0100
+Processing by PaymentsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (2.3ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."last_name" ASC
+  Rendered payments/_form.html.haml (53.6ms)
+  Rendered payments/new.html.haml within layouts/application (56.7ms)
+  Rendered layouts/_navigation.html.haml (2.9ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 2118ms (Views: 2108.8ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/payments" for 127.0.0.1 at 2015-12-05 12:44:09 +0100
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eBcwF8+XlXu3Pzdj8VoSUwLWbqHqRdLSPe8nNsRm5RX2IHAfnlXCs2D3mnHmYoXeC0TWkUmpv5VMV3hXuvHwAA==", "payment"=>{"sum"=>"100", "date(3i)"=>"5", "date(2i)"=>"12", "date(1i)"=>"2015", "month_fee(3i)"=>"1", "month_fee(2i)"=>"12", "month_fee(1i)"=>"2015", "student_id"=>"24"}, "commit"=>"Create Payment"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36mStudent Load (2.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO "payments" ("sum", "student_id", "date", "month_fee", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["sum", "100.0"], ["student_id", 24], ["date", "2015-12-05"], ["month_fee", "2015-12-01 00:00:00.000000"], ["created_at", "2015-12-05 11:44:09.165249"], ["updated_at", "2015-12-05 11:44:09.165249"]]
+  [1m[36m (16.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/payments/2
+Completed 302 Found in 50ms (ActiveRecord: 22.7ms)
+
+
+Started GET "/payments/2" for 127.0.0.1 at 2015-12-05 12:44:09 +0100
+Processing by PaymentsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPayment Load (1.9ms)[0m  [1mSELECT  "payments".* FROM "payments" WHERE "payments"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mStudent Load (1.3ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 24]]
+  Rendered payments/show.html.haml within layouts/application (18.7ms)
+  Rendered layouts/_navigation.html.haml (3.0ms)
+  Rendered layouts/_messages.html.haml (0.6ms)
+Completed 200 OK in 2372ms (Views: 2359.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:44:14 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (1.2ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mStudent Load (0.7ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35mStudent Load (0.8ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 24]]
+  Rendered payments/_payment.html.haml (15.2ms)
+  Rendered payments/index.html.haml within layouts/application (27.0ms)
+  Rendered layouts/_navigation.html.haml (3.2ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 2007ms (Views: 1999.0ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:46:16 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (2.0ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mStudent Load (0.7ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  Rendered payments/_payment.html.haml (75.9ms)
+  Rendered payments/index.html.haml within layouts/application (126.2ms)
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 19.9ms)
+
+NameError - undefined local variable or method `sum' for #<PaymentDecorator:0x007fe5ab0f1138>:
+  app/decorators/payment_decorator.rb:7:in `sum_to_euro'
+  app/views/payments/_payment.html.haml:4:in `_app_views_payments__payment_html_haml__4455386329739712418_70312190104940'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:436:in `block in collection_with_template'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:432:in `collection_with_template'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:324:in `render_collection'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:306:in `block in render'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:305:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.2.1) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `block in render_with_haml'
+  haml (4.0.7) lib/haml/helpers.rb:89:in `non_haml'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `render_with_haml'
+  app/views/payments/index.html.haml:13:in `_app_views_payments_index_html_haml__1388618712659399286_70312188560680'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/michal/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  request_store (1.2.1) lib/request_store/middleware.rb:8:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/7d926212f74372de/variables" for 127.0.0.1 at 2015-12-05 12:46:17 +0100
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:46:27 +0100
+Processing by PaymentsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPayment Load (1.1ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mStudent Load (1.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 11]]
+  Rendered payments/_payment.html.haml (68.6ms)
+  Rendered payments/index.html.haml within layouts/application (109.8ms)
+Completed 500 Internal Server Error in 165ms (ActiveRecord: 18.1ms)
+
+NoMethodError - undefined method `number_to_currency' for #<PaymentDecorator:0x007fe5ab871e80>:
+  app/decorators/payment_decorator.rb:7:in `sum_to_euro'
+  app/views/payments/_payment.html.haml:4:in `_app_views_payments__payment_html_haml__4455386329739712418_70312190104940'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:436:in `block in collection_with_template'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:432:in `collection_with_template'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:324:in `render_collection'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:306:in `block in render'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:305:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.2.1) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `block in render_with_haml'
+  haml (4.0.7) lib/haml/helpers.rb:89:in `non_haml'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `render_with_haml'
+  app/views/payments/index.html.haml:13:in `_app_views_payments_index_html_haml__1388618712659399286_70312188560680'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/michal/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  request_store (1.2.1) lib/request_store/middleware.rb:8:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/7236ef0d9f62780f/variables" for 127.0.0.1 at 2015-12-05 12:46:28 +0100
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:46:59 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (2.6ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mStudent Load (0.6ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  Rendered payments/_payment.html.haml (86.6ms)
+  Rendered payments/index.html.haml within layouts/application (136.7ms)
+Completed 500 Internal Server Error in 208ms (ActiveRecord: 26.7ms)
+
+NoMethodError - undefined method `number_to_currency' for #<PaymentDecorator:0x007fe5ab6ddec0>:
+  app/decorators/payment_decorator.rb:7:in `sum_to_euro'
+  app/views/payments/_payment.html.haml:4:in `_app_views_payments__payment_html_haml__4455386329739712418_70312190104940'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:436:in `block in collection_with_template'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:432:in `collection_with_template'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:324:in `render_collection'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:306:in `block in render'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:305:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.2.1) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `block in render_with_haml'
+  haml (4.0.7) lib/haml/helpers.rb:89:in `non_haml'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `render_with_haml'
+  app/views/payments/index.html.haml:13:in `_app_views_payments_index_html_haml__1388618712659399286_70312188560680'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/michal/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  request_store (1.2.1) lib/request_store/middleware.rb:8:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/55e70d51554861b2/variables" for 127.0.0.1 at 2015-12-05 12:47:00 +0100
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:47:31 +0100
+Processing by PaymentsController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPayment Load (1.6ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mStudent Load (0.9ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 11]]
+  Rendered payments/_payment.html.haml (70.8ms)
+  Rendered payments/index.html.haml within layouts/application (111.8ms)
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 18.3ms)
+
+NoMethodError - undefined method `number_to_currency' for #<Payment:0x007fe5aaf30a38>:
+  activemodel (4.2.1) lib/active_model/attribute_methods.rb:433:in `method_missing'
+  app/decorators/payment_decorator.rb:7:in `sum_to_euro'
+  app/views/payments/_payment.html.haml:4:in `_app_views_payments__payment_html_haml__4455386329739712418_70312190104940'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:436:in `block in collection_with_template'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:432:in `collection_with_template'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:324:in `render_collection'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:306:in `block in render'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:305:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.2.1) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `block in render_with_haml'
+  haml (4.0.7) lib/haml/helpers.rb:89:in `non_haml'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `render_with_haml'
+  app/views/payments/index.html.haml:13:in `_app_views_payments_index_html_haml__1388618712659399286_70312188560680'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/michal/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  request_store (1.2.1) lib/request_store/middleware.rb:8:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/15f3e558b19d9ad5/variables" for 127.0.0.1 at 2015-12-05 12:47:32 +0100
+
+
+Started POST "/__better_errors/15f3e558b19d9ad5/variables" for 127.0.0.1 at 2015-12-05 12:47:34 +0100
+
+
+Started POST "/__better_errors/15f3e558b19d9ad5/variables" for 127.0.0.1 at 2015-12-05 12:47:43 +0100
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:48:27 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (1.4ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mStudent Load (1.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35mStudent Load (1.4ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 24]]
+  Rendered payments/_payment.html.haml (78.4ms)
+  Rendered payments/index.html.haml within layouts/application (130.5ms)
+  Rendered layouts/_navigation.html.haml (6.2ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 3018ms (Views: 2935.5ms | ActiveRecord: 27.6ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:48:43 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (2.0ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mStudent Load (0.7ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  Rendered payments/_payment.html.haml (72.8ms)
+  Rendered payments/index.html.haml within layouts/application (131.6ms)
+Completed 500 Internal Server Error in 200ms (ActiveRecord: 24.3ms)
+
+NameError - undefined local variable or method `sum' for #<PaymentDecorator:0x007fe5aa1297c8>:
+  app/decorators/payment_decorator.rb:7:in `sum_to_euro'
+  app/views/payments/_payment.html.haml:4:in `_app_views_payments__payment_html_haml__4455386329739712418_70312190104940'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:436:in `block in collection_with_template'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:432:in `collection_with_template'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:324:in `render_collection'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:306:in `block in render'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:305:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.2.1) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `block in render_with_haml'
+  haml (4.0.7) lib/haml/helpers.rb:89:in `non_haml'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `render_with_haml'
+  app/views/payments/index.html.haml:13:in `_app_views_payments_index_html_haml__1388618712659399286_70312188560680'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/michal/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  request_store (1.2.1) lib/request_store/middleware.rb:8:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/1458bc30223166e8/variables" for 127.0.0.1 at 2015-12-05 12:48:44 +0100
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:48:56 +0100
+Processing by PaymentsController#index as HTML
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPayment Load (2.0ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mStudent Load (0.5ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mStudent Load (0.9ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  Rendered payments/_payment.html.haml (77.7ms)
+  Rendered payments/index.html.haml within layouts/application (125.4ms)
+  Rendered layouts/_navigation.html.haml (4.0ms)
+  Rendered layouts/_messages.html.haml (0.4ms)
+Completed 200 OK in 2555ms (Views: 2481.3ms | ActiveRecord: 23.3ms)
+
+
+Started GET "/payments/new" for 127.0.0.1 at 2015-12-05 12:49:04 +0100
+Processing by PaymentsController#new as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (1.5ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."last_name" ASC[0m
+  Rendered payments/_form.html.haml (42.4ms)
+  Rendered payments/new.html.haml within layouts/application (44.5ms)
+  Rendered layouts/_navigation.html.haml (3.2ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 2068ms (Views: 2061.6ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/payments" for 127.0.0.1 at 2015-12-05 12:49:12 +0100
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n8nfhBN8B4NtpJ+ag5I2HmOtMpUMGTUhGhyJAZEwKrwR/p+MQr5QS7psMoiUqqGTaj+Kpa/1WGZrpNZg76c/qQ==", "payment"=>{"sum"=>"50", "date(3i)"=>"5", "date(2i)"=>"12", "date(1i)"=>"2015", "month_fee(3i)"=>"1", "month_fee(2i)"=>"12", "month_fee(1i)"=>"2015", "student_id"=>"5"}, "commit"=>"Create Payment"}
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mStudent Load (0.7ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mSQL (2.4ms)[0m  [1mINSERT INTO "payments" ("sum", "student_id", "date", "month_fee", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["sum", "50.0"], ["student_id", 5], ["date", "2015-12-05"], ["month_fee", "2015-12-01 00:00:00.000000"], ["created_at", "2015-12-05 11:49:12.770920"], ["updated_at", "2015-12-05 11:49:12.770920"]]
+  [1m[35m (11.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/payments/3
+Completed 302 Found in 46ms (ActiveRecord: 17.1ms)
+
+
+Started GET "/payments/3" for 127.0.0.1 at 2015-12-05 12:49:12 +0100
+Processing by PaymentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (2.3ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mStudent Load (0.7ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered payments/show.html.haml within layouts/application (27.2ms)
+  Rendered layouts/_navigation.html.haml (4.8ms)
+  Rendered layouts/_messages.html.haml (0.5ms)
+Completed 200 OK in 2477ms (Views: 2467.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:49:17 +0100
+Processing by PaymentsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPayment Load (1.9ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mStudent Load (0.8ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mStudent Load (0.7ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mStudent Load (0.9ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered payments/_payment.html.haml (29.7ms)
+  Rendered payments/index.html.haml within layouts/application (41.9ms)
+  Rendered layouts/_navigation.html.haml (3.2ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 2049ms (Views: 2038.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/payments/1" for 127.0.0.1 at 2015-12-05 12:49:33 +0100
+Processing by PaymentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (1.8ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (0.8ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  Rendered payments/show.html.haml within layouts/application (20.9ms)
+  Rendered layouts/_navigation.html.haml (3.0ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 2046ms (Views: 2036.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:50:13 +0100
+Processing by PaymentsController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPayment Load (1.1ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mStudent Load (0.7ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mStudent Load (0.9ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mStudent Load (1.0ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 5]]
+  Rendered payments/_payment.html.haml (30.4ms)
+  Rendered payments/index.html.haml within layouts/application (43.7ms)
+  Rendered layouts/_navigation.html.haml (3.1ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 2115ms (Views: 2104.9ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/payments/new" for 127.0.0.1 at 2015-12-05 12:50:16 +0100
+Processing by PaymentsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered payments/_form.html.haml (23.3ms)
+  Rendered payments/new.html.haml within layouts/application (27.2ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.7ms)
+
+NoMethodError - undefined method `to_a' for 100:Fixnum:
+  simple_form (3.2.0) lib/simple_form/inputs/collection_input.rb:35:in `collection'
+  simple_form (3.2.0) lib/simple_form/inputs/collection_input.rb:88:in `detect_collection_classes'
+  simple_form (3.2.0) lib/simple_form/inputs/collection_input.rb:69:in `detect_common_display_methods'
+  simple_form (3.2.0) lib/simple_form/inputs/collection_input.rb:61:in `detect_collection_methods'
+  simple_form (3.2.0) lib/simple_form/inputs/collection_select_input.rb:5:in `input'
+  simple_form (3.2.0) lib/simple_form/wrappers/leaf.rb:19:in `render'
+  simple_form (3.2.0) lib/simple_form/wrappers/many.rb:28:in `block in render'
+  simple_form (3.2.0) lib/simple_form/wrappers/many.rb:26:in `render'
+  simple_form (3.2.0) lib/simple_form/wrappers/root.rb:15:in `render'
+  simple_form (3.2.0) lib/simple_form/form_builder.rb:116:in `input'
+  app/views/payments/_form.html.haml:2:in `block in _app_views_payments__form_html_haml__471880954006113532_70312275762100'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:137:in `block (2 levels) in form_for_with_haml'
+  haml (4.0.7) lib/haml/helpers.rb:278:in `with_tabs'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:137:in `block in form_for_with_haml'
+  actionview (4.2.1) lib/action_view/helpers/capture_helper.rb:38:in `block in capture'
+  actionview (4.2.1) lib/action_view/helpers/capture_helper.rb:200:in `with_output_buffer'
+  haml (4.0.7) lib/haml/helpers/action_view_xss_mods.rb:5:in `with_output_buffer_with_haml_xss'
+  actionview (4.2.1) lib/action_view/helpers/capture_helper.rb:38:in `capture'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:52:in `capture_with_haml'
+  actionview (4.2.1) lib/action_view/helpers/form_helper.rb:444:in `form_for'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:139:in `form_for_with_haml'
+  haml (4.0.7) lib/haml/helpers/action_view_xss_mods.rb:28:in `form_for_with_haml_xss'
+  simple_form (3.2.0) lib/simple_form/action_view_extensions/form_helper.rb:26:in `block in simple_form_for'
+  simple_form (3.2.0) lib/simple_form/action_view_extensions/form_helper.rb:45:in `with_simple_form_field_error_proc'
+  simple_form (3.2.0) lib/simple_form/action_view_extensions/form_helper.rb:25:in `simple_form_for'
+  app/views/payments/_form.html.haml:1:in `_app_views_payments__form_html_haml__471880954006113532_70312275762100'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:339:in `render_partial'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:310:in `block in render'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:309:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.2.1) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `block in render_with_haml'
+  haml (4.0.7) lib/haml/helpers.rb:89:in `non_haml'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `render_with_haml'
+  app/views/payments/new.html.haml:1:in `_app_views_payments_new_html_haml__3384013203632109173_70312274859680'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/michal/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  request_store (1.2.1) lib/request_store/middleware.rb:8:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+
+Started GET "/payments/new" for 127.0.0.1 at 2015-12-05 12:50:16 +0100
+Processing by PaymentsController#new as HTML
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered payments/_form.html.haml (28.7ms)
+  Rendered payments/new.html.haml within layouts/application (32.7ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 1.5ms)
+
+NoMethodError - undefined method `to_a' for 100:Fixnum:
+  simple_form (3.2.0) lib/simple_form/inputs/collection_input.rb:35:in `collection'
+  simple_form (3.2.0) lib/simple_form/inputs/collection_input.rb:88:in `detect_collection_classes'
+  simple_form (3.2.0) lib/simple_form/inputs/collection_input.rb:69:in `detect_common_display_methods'
+  simple_form (3.2.0) lib/simple_form/inputs/collection_input.rb:61:in `detect_collection_methods'
+  simple_form (3.2.0) lib/simple_form/inputs/collection_select_input.rb:5:in `input'
+  simple_form (3.2.0) lib/simple_form/wrappers/leaf.rb:19:in `render'
+  simple_form (3.2.0) lib/simple_form/wrappers/many.rb:28:in `block in render'
+  simple_form (3.2.0) lib/simple_form/wrappers/many.rb:26:in `render'
+  simple_form (3.2.0) lib/simple_form/wrappers/root.rb:15:in `render'
+  simple_form (3.2.0) lib/simple_form/form_builder.rb:116:in `input'
+  app/views/payments/_form.html.haml:2:in `block in _app_views_payments__form_html_haml__471880954006113532_70312185411520'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:137:in `block (2 levels) in form_for_with_haml'
+  haml (4.0.7) lib/haml/helpers.rb:278:in `with_tabs'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:137:in `block in form_for_with_haml'
+  actionview (4.2.1) lib/action_view/helpers/capture_helper.rb:38:in `block in capture'
+  actionview (4.2.1) lib/action_view/helpers/capture_helper.rb:200:in `with_output_buffer'
+  haml (4.0.7) lib/haml/helpers/action_view_xss_mods.rb:5:in `with_output_buffer_with_haml_xss'
+  actionview (4.2.1) lib/action_view/helpers/capture_helper.rb:38:in `capture'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:52:in `capture_with_haml'
+  actionview (4.2.1) lib/action_view/helpers/form_helper.rb:444:in `form_for'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:139:in `form_for_with_haml'
+  haml (4.0.7) lib/haml/helpers/action_view_xss_mods.rb:28:in `form_for_with_haml_xss'
+  simple_form (3.2.0) lib/simple_form/action_view_extensions/form_helper.rb:26:in `block in simple_form_for'
+  simple_form (3.2.0) lib/simple_form/action_view_extensions/form_helper.rb:45:in `with_simple_form_field_error_proc'
+  simple_form (3.2.0) lib/simple_form/action_view_extensions/form_helper.rb:25:in `simple_form_for'
+  app/views/payments/_form.html.haml:1:in `_app_views_payments__form_html_haml__471880954006113532_70312185411520'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:339:in `render_partial'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:310:in `block in render'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/partial_renderer.rb:309:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (4.2.1) lib/action_view/helpers/rendering_helper.rb:35:in `render'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `block in render_with_haml'
+  haml (4.0.7) lib/haml/helpers.rb:89:in `non_haml'
+  haml (4.0.7) lib/haml/helpers/action_view_mods.rb:10:in `render_with_haml'
+  app/views/payments/new.html.haml:1:in `_app_views_payments_new_html_haml__3384013203632109173_70312198948880'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/michal/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  request_store (1.2.1) lib/request_store/middleware.rb:8:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/54d1b17d92a46aee/variables" for 127.0.0.1 at 2015-12-05 12:50:17 +0100
+  [1m[36mPayment Load (0.8ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+
+
+Started GET "/payments/new" for 127.0.0.1 at 2015-12-05 12:50:30 +0100
+Processing by PaymentsController#new as HTML
+  [1m[35mUser Load (3.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (5.2ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."last_name" ASC[0m
+  Rendered payments/_form.html.haml (73.1ms)
+  Rendered payments/new.html.haml within layouts/application (76.7ms)
+  Rendered layouts/_navigation.html.haml (3.1ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 2559ms (Views: 2539.1ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/payments" for 127.0.0.1 at 2015-12-05 12:50:43 +0100
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G68vJTRB5VUZAlq55eG0WRtj6lwaET4CaBP43iyhoeCVmG8tZYOync7K96vy2SPUEvFSbLn9U0UZq6e/Uja09Q==", "payment"=>{"sum"=>"100", "date(3i)"=>"5", "date(2i)"=>"12", "date(1i)"=>"2015", "month_fee(3i)"=>"1", "month_fee(2i)"=>"12", "month_fee(1i)"=>"2015", "student_id"=>"1"}, "commit"=>"Create Payment"}
+  [1m[35mUser Load (1.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mStudent Load (1.7ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mSQL (4.2ms)[0m  [1mINSERT INTO "payments" ("sum", "student_id", "date", "month_fee", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["sum", "100.0"], ["student_id", 1], ["date", "2015-12-05"], ["month_fee", "2015-12-01 00:00:00.000000"], ["created_at", "2015-12-05 11:50:43.168437"], ["updated_at", "2015-12-05 11:50:43.168437"]]
+  [1m[35m (16.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/payments/4
+Completed 302 Found in 68ms (ActiveRecord: 31.9ms)
+
+
+Started GET "/payments/4" for 127.0.0.1 at 2015-12-05 12:50:43 +0100
+Processing by PaymentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (2.3ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = $1 LIMIT 1  [["id", 4]]
+  [1m[36mStudent Load (0.9ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered payments/show.html.haml within layouts/application (22.1ms)
+  Rendered layouts/_navigation.html.haml (4.2ms)
+  Rendered layouts/_messages.html.haml (0.5ms)
+Completed 200 OK in 2418ms (Views: 2408.4ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:50:48 +0100
+Processing by PaymentsController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPayment Load (1.1ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mStudent Load (1.8ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mStudent Load (1.0ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mStudent Load (0.9ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mStudent Load (1.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered payments/_payment.html.haml (34.9ms)
+  Rendered payments/index.html.haml within layouts/application (47.8ms)
+  Rendered layouts/_navigation.html.haml (3.1ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 2052ms (Views: 2040.8ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/payments/new" for 127.0.0.1 at 2015-12-05 12:51:12 +0100
+Processing by PaymentsController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mStudent Load (1.4ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."last_name" ASC[0m
+  Rendered payments/_form.html.haml (84.0ms)
+  Rendered payments/new.html.haml within layouts/application (86.2ms)
+  Rendered layouts/_navigation.html.haml (3.0ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 2118ms (Views: 2072.4ms | ActiveRecord: 14.0ms)
+
+
+Started POST "/payments" for 127.0.0.1 at 2015-12-05 12:51:18 +0100
+Processing by PaymentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1LC7RMQ8Avk+anudA4X6UIXgfON/sW5T3qU2XnK5zHNah/tMlf5VMemi1o8UvW3djHLE09xdAxSvHWk/DC7ZZg==", "payment"=>{"sum"=>"100", "date(3i)"=>"5", "date(2i)"=>"12", "date(1i)"=>"2015", "month_fee(3i)"=>"1", "month_fee(2i)"=>"12", "month_fee(1i)"=>"2015", "student_id"=>"23"}, "commit"=>"Create Payment"}
+  [1m[35mUser Load (1.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mStudent Load (1.6ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 23]]
+  [1m[36mSQL (4.9ms)[0m  [1mINSERT INTO "payments" ("sum", "student_id", "date", "month_fee", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["sum", "100.0"], ["student_id", 23], ["date", "2015-12-05"], ["month_fee", "2015-12-01 00:00:00.000000"], ["created_at", "2015-12-05 11:51:18.889554"], ["updated_at", "2015-12-05 11:51:18.889554"]]
+  [1m[35m (18.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/payments/5
+Completed 302 Found in 79ms (ActiveRecord: 37.2ms)
+
+
+Started GET "/payments/5" for 127.0.0.1 at 2015-12-05 12:51:18 +0100
+Processing by PaymentsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (1.8ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mStudent Load (0.8ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  Rendered payments/show.html.haml within layouts/application (32.2ms)
+  Rendered layouts/_navigation.html.haml (4.6ms)
+  Rendered layouts/_messages.html.haml (0.5ms)
+  [1m[35mPayment Load (1.4ms)[0m  SELECT "payments".* FROM "payments"
+Completed 500 Internal Server Error in 2411ms (ActiveRecord: 5.3ms)
+
+NoMethodError - undefined method `sum_to_euro' for #<#<Class:0x007fe5aa3fc8b0>:0x007fe5a9f50fa0>:
+  gretel (3.0.8) lib/gretel/crumb.rb:65:in `method_missing'
+  config/breadcrumbs.rb:42:in `block (2 levels) in load_breadcrumbs'
+  gretel (3.0.8) lib/gretel/crumb.rb:16:in `initialize'
+  gretel (3.0.8) lib/gretel/renderer.rb:110:in `links'
+  gretel (3.0.8) lib/gretel/renderer.rb:79:in `links_for_render'
+  gretel (3.0.8) lib/gretel/renderer.rb:36:in `render'
+  gretel (3.0.8) lib/gretel/view_helpers.rb:48:in `breadcrumbs'
+  gretel (3.0.8) lib/gretel/deprecated/yield_links.rb:15:in `breadcrumbs_with_yield_links'
+  app/views/layouts/application.html.haml:18:in `_app_views_layouts_application_html_haml__1486507595349551920_70312571862300'
+  actionview (4.2.1) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.1) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:66:in `render_with_layout'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.1) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.1) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.1) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/michal/.rbenv/versions/2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.1) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_process_action_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.1) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.1) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.1) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.1) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.1) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.1) lib/action_dispatch/routing/route_set.rb:819:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:649:in `call'
+  activerecord (4.2.1) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_call_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  request_store (1.2.1) lib/request_store/middleware.rb:8:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  puma (2.15.3) lib/puma/server.rb:541:in `handle_request'
+  puma (2.15.3) lib/puma/server.rb:388:in `process_client'
+  puma (2.15.3) lib/puma/server.rb:270:in `block in run'
+  puma (2.15.3) lib/puma/thread_pool.rb:106:in `block in spawn_thread'
+
+
+
+Started POST "/__better_errors/6839cd010c419ad6/variables" for 127.0.0.1 at 2015-12-05 12:51:21 +0100
+
+
+Started GET "/payments/5" for 127.0.0.1 at 2015-12-05 12:51:59 +0100
+Processing by PaymentsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mPayment Load (1.6ms)[0m  SELECT  "payments".* FROM "payments" WHERE "payments"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mStudent Load (1.4ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 23]]
+  Rendered payments/show.html.haml within layouts/application (18.8ms)
+  Rendered layouts/_navigation.html.haml (3.1ms)
+  Rendered layouts/_messages.html.haml (0.5ms)
+Completed 200 OK in 2544ms (Views: 2534.0ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 12:52:13 +0100
+Processing by PaymentsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mPayment Load (1.7ms)[0m  [1mSELECT "payments".* FROM "payments"[0m
+  [1m[35mStudent Load (0.6ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mStudent Load (1.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 24]]
+  [1m[35mStudent Load (0.7ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 5]]
+  [1m[36mStudent Load (0.6ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mStudent Load (0.9ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1  [["id", 23]]
+  Rendered payments/_payment.html.haml (35.0ms)
+  Rendered payments/index.html.haml within layouts/application (48.5ms)
+  Rendered layouts/_navigation.html.haml (3.1ms)
+  Rendered layouts/_messages.html.haml (0.3ms)
+Completed 200 OK in 2045ms (Views: 2034.6ms | ActiveRecord: 6.5ms)

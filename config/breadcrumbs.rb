@@ -39,5 +39,5 @@ crumb :payments do
 end
 
 crumb :payment do |payment|
-  link "#{payment.student.decorate.full_name} date: #{payment.date} sum: #{sum_to_euro(payment.sum)}", payments_path(payment)
+  link "#{payment.student.decorate.full_name} date: #{payment.date} sum: #{payment.decorate.sum_to_euro}", payments_path(payment)
 end

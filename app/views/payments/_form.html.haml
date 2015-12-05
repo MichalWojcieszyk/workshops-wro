@@ -1,5 +1,5 @@
 = simple_form_for payment do |f|
-	= f.input :sum, collection: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100], selected: 100
+	= f.input :sum, collection: [100], selected: 100
 	= f.input :date, as: :date, start_year: Date.today.year - 10, end_year: Date.today.year, order: [:day, :month, :year]
 	= f.input :month_fee, as: :date, start_year: Date.today.year - 1, end_year: Date.today.year, discard_day: true, order: [:month, :year]
 	= f.association :student, label_method: :last_name, value_method: :id, collection: Student.order(:last_name)
