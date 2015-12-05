@@ -20,7 +20,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'dotenv-rails'
 gem 'gretel'
 gem 'jquery-datatables-rails'
-gem 'ajax-datatables-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
 
