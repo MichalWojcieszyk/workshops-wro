@@ -2,6 +2,6 @@
 	= f.input :sum, collection: [100], selected: 100
 	= f.input :date, as: :date, start_year: Date.today.year - 10, end_year: Date.today.year, order: [:day, :month, :year]
 	= f.input :month_fee, as: :date, start_year: Date.today.year - 1, end_year: Date.today.year, discard_day: true, order: [:month, :year]
-	= f.association :student, label_method: :last_name, value_method: :id, collection: Student.order(:last_name)
+	= f.association :student, label_method: lambda { |student| "#{student.first_name}" + " " + "#{student.last_name}" }, value_method: :id, collection: Student.order(:last_name)
 	= link_to t('shared.back'), payments_path, class: 'btn btn-default'
 	= f.button :submit
