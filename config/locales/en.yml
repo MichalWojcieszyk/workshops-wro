@@ -25,6 +25,7 @@ en:
       first_name: First name
       last_name: Last name
       birthdate: Birth date
+      payments: Student payments
   teacher:
     columns:
       first_name: First name

@@ -2,6 +2,7 @@ class PaymentsController < ApplicationController
   expose(:students)
   expose(:payment, attributes: :payment_params)
   expose(:payments)
+  expose(:student)
 
   def create
   	if payment.save
