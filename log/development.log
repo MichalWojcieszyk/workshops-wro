@@ -37275,3 +37275,106 @@ Processing by PaymentsController#new as HTML
   Rendered layouts/_navigation.html.haml (3.1ms)
   Rendered layouts/_messages.html.haml (0.2ms)
 Completed 200 OK in 2298ms (Views: 2291.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-05 18:19:21 +0100
+Processing by StudentsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mStudent Load (1.0ms)[0m  SELECT "students".* FROM "students"  ORDER BY "students"."last_name" ASC
+  Rendered students/_student.haml (46.2ms)
+  Rendered students/index.html.haml within layouts/application (74.1ms)
+  Rendered layouts/_navigation.html.haml (2.2ms)
+  Rendered layouts/_messages.html.haml (0.4ms)
+Completed 200 OK in 2012ms (Views: 2007.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/teachers" for 127.0.0.1 at 2015-12-05 18:19:50 +0100
+Processing by TeachersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mTeacher Load (1.2ms)[0m  SELECT "teachers".* FROM "teachers"  ORDER BY "teachers"."last_name" ASC
+  Rendered teachers/_teacher.html.haml (7.8ms)
+  Rendered teachers/index.html.haml within layouts/application (35.4ms)
+  Rendered layouts/_navigation.html.haml (2.1ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 1515ms (Views: 1511.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/report/subjects" for 127.0.0.1 at 2015-12-05 18:19:54 +0100
+Processing by ReportsController#subjects as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mSubjectItem Load (1.5ms)[0m  SELECT "subject_items".* FROM "subject_items"
+  [1m[36mTeacher Load (1.0ms)[0m  [1mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IN (3, 2)[0m
+  [1m[35mParticipation Load (1.0ms)[0m  SELECT "participations".* FROM "participations" WHERE "participations"."subject_item_id" IN (1, 3, 4, 5, 2)
+  [1m[36mStudent Load (1.0ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."id" IN (5, 22, 12, 13, 6, 2, 24, 8, 19)[0m
+  [1m[35m (0.9ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 1  [["student_id", 5]]
+  [1m[36m (0.8ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 1[0m  [["student_id", 12]]
+  [1m[35m (0.6ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 1  [["student_id", 22]]
+  Rendered reports/_subject_item.html.haml (11.3ms)
+  [1m[36m (0.9ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3[0m  [["student_id", 5]]
+  Rendered reports/_subject_item.html.haml (6.0ms)
+  [1m[35m (0.8ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4  [["student_id", 2]]
+  [1m[36m (0.7ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 5]]
+  [1m[35m (0.5ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4  [["student_id", 6]]
+  [1m[36m (0.5ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 13]]
+  Rendered reports/_subject_item.html.haml (13.7ms)
+  [1m[35m (0.8ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 5  [["student_id", 24]]
+  Rendered reports/_subject_item.html.haml (7.7ms)
+  [1m[36m (1.6ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 2[0m  [["student_id", 8]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 2  [["student_id", 19]]
+  Rendered reports/_subject_item.html.haml (12.5ms)
+  Rendered reports/subjects.html.haml within layouts/application (101.9ms)
+  Rendered layouts/_navigation.html.haml (2.2ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 1629ms (Views: 1609.9ms | ActiveRecord: 14.5ms)
+
+
+Started GET "/report/subjects" for 127.0.0.1 at 2015-12-05 18:20:58 +0100
+Processing by ReportsController#subjects as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mSubjectItem Load (0.9ms)[0m  SELECT "subject_items".* FROM "subject_items"  ORDER BY title asc
+  [1m[36mTeacher Load (0.9ms)[0m  [1mSELECT "teachers".* FROM "teachers" WHERE "teachers"."id" IN (3, 2)[0m
+  [1m[35mParticipation Load (1.1ms)[0m  SELECT "participations".* FROM "participations" WHERE "participations"."subject_item_id" IN (1, 2, 3, 4, 5)
+  [1m[36mStudent Load (0.9ms)[0m  [1mSELECT "students".* FROM "students" WHERE "students"."id" IN (5, 22, 12, 8, 19, 13, 6, 2, 24)[0m
+  [1m[35m (0.7ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 1  [["student_id", 5]]
+  [1m[36m (0.6ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 1[0m  [["student_id", 12]]
+  [1m[35m (0.7ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 1  [["student_id", 22]]
+  Rendered reports/_subject_item.html.haml (23.1ms)
+  [1m[36m (0.9ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 2[0m  [["student_id", 8]]
+  [1m[35m (0.8ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 2  [["student_id", 19]]
+  Rendered reports/_subject_item.html.haml (8.6ms)
+  [1m[36m (2.0ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 3[0m  [["student_id", 5]]
+  Rendered reports/_subject_item.html.haml (11.7ms)
+  [1m[35m (2.5ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4  [["student_id", 2]]
+  [1m[36m (1.0ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 5]]
+  [1m[35m (0.5ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4  [["student_id", 6]]
+  [1m[36m (0.6ms)[0m  [1mSELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 4[0m  [["student_id", 13]]
+  Rendered reports/_subject_item.html.haml (20.0ms)
+  [1m[35m (0.8ms)[0m  SELECT AVG("subject_item_notes"."value") FROM "subject_item_notes" WHERE "subject_item_notes"."student_id" = $1 AND "subject_item_notes"."subject_item_id" = 5  [["student_id", 24]]
+  Rendered reports/_subject_item.html.haml (8.0ms)
+  Rendered reports/subjects.html.haml within layouts/application (105.4ms)
+  Rendered layouts/_navigation.html.haml (2.5ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 1645ms (Views: 1626.1ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/payments" for 127.0.0.1 at 2015-12-05 18:21:16 +0100
+Processing by PaymentsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mPayment Load (1.1ms)[0m  SELECT "payments".* FROM "payments"
+  [1m[36mStudent Load (0.7ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT 1[0m  [["id", 5]]
+  Rendered payments/_payment.html.haml (8.4ms)
+  Rendered payments/index.html.haml within layouts/application (38.6ms)
+  Rendered layouts/_navigation.html.haml (2.3ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 1545ms (Views: 1537.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2015-12-05 18:21:24 +0100
+Processing by StudentsController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mStudent Load (1.7ms)[0m  [1mSELECT "students".* FROM "students"  ORDER BY "students"."last_name" ASC[0m
+  Rendered students/_student.haml (53.5ms)
+  Rendered students/index.html.haml within layouts/application (62.3ms)
+  Rendered layouts/_navigation.html.haml (2.2ms)
+  Rendered layouts/_messages.html.haml (0.2ms)
+Completed 200 OK in 1513ms (Views: 1508.2ms | ActiveRecord: 2.4ms)
