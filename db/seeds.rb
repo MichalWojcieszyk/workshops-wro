@@ -22,7 +22,7 @@ end
   Student.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
-    birthdate: Faker::Date.backward(1000)
+    birthdate: Faker::Date.birthday(min_age = 6, max_age = 19)
   )
 end
 
